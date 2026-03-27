@@ -10,3 +10,6 @@ app.secret_key = '08032005' #(?)
 
 db = SQLAlchemy(app)
 
+from Hangy.routes.main import main_bp
+
+app.register_blueprint(main_bp)
