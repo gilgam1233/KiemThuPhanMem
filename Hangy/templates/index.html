@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{%extends 'base.html'%}
 
-</body>
-</html>
+{%block head%}
+    {{super()}}
+    <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+{%endblock%}
+
+{%block content%}
+<div class="isearchbar d-flex">
+    <input aria-label="Search" class="form-control me-2" placeholder="Nhập từ khóa cần tìm" type="search">
+    <button class="btn btn-search" type="submit">Tìm</button>
+</div>
+<div class="products">
+
+    {%for c in list_products%}
+    <div class="product">
+        <div class="img">
+            <img src="{{c.image}}">
+        </div>
+        <div class="info">
+            <h6>{{c.name}}</h6>
+            <p>{{ "{:,.0f}".format(c.price) | replace(",", ".") }} &#8363;</p>
+        </div>
+        <div class="btn-add-cart">
+            <button>Thêm vào giỏ hàng</button>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+{%endblock%}
