@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94c011d5-f749-4dd9-a099-51abebd730e7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/templates/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="setup/register" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -47,7 +45,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "setup/login",
     "last_opened_file_path": "E:/KiemThuPhanMem",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
