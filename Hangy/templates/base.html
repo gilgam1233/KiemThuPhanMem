@@ -28,7 +28,7 @@
 <header class="main-header">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">E-COMMERCE</a>
+            <a class="navbar-brand" href="/">E-COMMERCE</a>
             <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                     class="navbar-toggler" data-bs-target="#navbarSupportedContent"
                     data-bs-toggle="collapse" type="button">
@@ -44,7 +44,8 @@
                     </ul>
                 </div>
                 <div class="searchbar d-flex">
-                    <input aria-label="Search" class="form-control me-2" placeholder="Nhập từ khóa cần tìm" type="search">
+                    <input aria-label="Search" class="form-control me-2" placeholder="Nhập từ khóa cần tìm"
+                           type="search">
                     <button class="btn btn-search" type="submit">Tìm</button>
                 </div>
                 <div>
@@ -55,12 +56,46 @@
                                 <p> Giỏ hàng</p>
                             </a>
                         </div>
+                        {% if current_user.is_authenticated %}
+
+                        <div class="hello me-3 d-none d-md-block fw-bold" style="font-size: 0.95rem;">
+                           {% if current_user.id.startswith('101') %}
+                               <span class="badge bg-warning text-dark me-2">Shop</span>
+                           {% endif %}
+                           Xin chào, {{ current_user.username }}
+                        </div>
+
+                        <div class="dropdown text-end">
+                            <a aria-expanded="false" class="d-block link-light text-decoration-none dropdown-toggle"
+                               data-bs-toggle="dropdown"
+                               href="#" id="dropdownUser1">
+                                {% if current_user.avatar %}
+                                <img alt="avatar" class="rounded-circle border border-white" height="32" src="{{ current_user.avatar }}"
+                                     width="32">
+                                {% else %}
+                                <i class="bi bi-person-circle"></i>
+                                {% endif %}
+                            </a>
+
+                            <ul aria-labelledby="dropdownUser1"
+                                class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end text-small shadow">
+                                <li><h6 class="dropdown-header">User: {{ current_user.username }}</h6></li>
+                                <li><a class="dropdown-item" href="{{ url_for('main_bp.student_profile') }}">Đơn hàng của tôi</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
+                            </ul>
+                        </div>
+
+                        {%else%}
                         <div class="d-flex login align-items-center mt-lg-0 justify-content-lg-end">
                             <a class="btn btn-login btn-outline-light px-4 fw-bold btn-sm" href="/login"
                                target="_blank">
                                 <i class="bi bi-box-arrow-in-right me-2"></i> Đăng nhập
                             </a>
                         </div>
+                        {%endif%}
                     </form>
                 </div>
 
@@ -82,13 +117,7 @@
                 </li>
             </ul>
         </div>
-        <div class="categories"><h5>DANH MỤC</h5>
-            <ul class="nav flex-column">
-                {%for c in list_categories%}
-                <li class="nav-item "><a class="nav-link p-0" href="#">{{c.category_name}}</a></li>
-                {%endfor%}
-            </ul>
-        </div>
+
         <div class="contact"><h5>LIÊN HỆ</h5>
             <ul class="nav flex-column">
                 <li class="nav-item "><i class="bi bi-house-door"></i> 67 Võ Văn Tần, phường Xuân Hòa, TPHCM</li>
