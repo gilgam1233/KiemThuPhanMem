@@ -15,22 +15,29 @@
 
 
 
-        <form action="/register" method="post">
+        <form action="/register" method="post" enctype="multipart/form-data">
             <div class="text-center mb-4">
                 <img alt="Avatar Preview"
                      class="rounded-circle border mb-3"
                      id="avatarPreview" src="https://res.cloudinary.com/du9oap5y2/image/upload/v1764921187/user_icon_izjcfk.png"
                      style="width: 100px; height: 100px; object-fit: cover; cursor: pointer;">
                 <br>
-                <button class="btn btn-sm btn-outline-primary" id="upload_widget" type="button">
-                    <i class="fas fa-camera me-1"></i> Chọn ảnh đại diện
-                </button>
-                <input id="avatarInput" name="avatar" type="hidden">
+
             </div>
 
             <div class="form-floating mb-3">
-                <input class="form-control" id="name" name="name" placeholder="Họ và tên" required type="text">
-                <label for="name">Họ và tên</label>
+                <span>Avatar: </span>
+                <input id="avatarInput" name="avatar" type="file">
+            </div>
+
+            <div class="form-floating mb-3">
+                <input class="form-control" id="first_name" name="first_name" placeholder="First name" required type="text">
+                <label for="first_name">First name</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input class="form-control" id="last_name" name="last_name" placeholder="Last name" required type="text">
+                <label for="last_name">Last name</label>
             </div>
 
             <div class="form-floating mb-3">
@@ -38,27 +45,10 @@
                 <label for="email">Email</label>
             </div>
 
-            <div class="mb-3">
-                <label class="form-label fw-bold text-muted me-3">Giới tính:</label>
-                <div class="form-check form-check-inline">
-                    <input checked class="form-check-input" id="male" name="gender" type="radio" value="1">
-                    <label class="form-check-label" for="male">Nam</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" id="female" name="gender" type="radio" value="0">
-                    <label class="form-check-label" for="female">Nữ</label>
-                </div>
-            </div>
-
             <div class="form-floating mb-3">
                 <input class="form-control" id="phone" name="phone" placeholder="Số điện thoại" required
                        type="tel">
                 <label for="phone">Số điện thoại</label>
-            </div>
-
-            <div class="form-floating mb-3">
-                <input class="form-control" id="dob" name="dob" required type="date">
-                <label for="dob">Ngày sinh</label>
             </div>
 
             <div class="form-floating mb-3">
