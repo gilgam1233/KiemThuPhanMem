@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94c011d5-f749-4dd9-a099-51abebd730e7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/KiemThuPhanMem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/KiemThuPhanMem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/static/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/static/css/register.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +23,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="setup/login" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{

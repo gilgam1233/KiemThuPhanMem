@@ -36,7 +36,6 @@ form.navbar-nav {
 
 .btn-login:hover {
     background-color: rgb(173, 255, 47);
-    /*font-weight: bold;*/
 }
 
 .dropdown-item, .btn-login:hover {
@@ -54,8 +53,6 @@ body > div {
     width: 30%;
     margin: auto;
     padding: 2rem;
-    /*padding-top: 5rem;*/
-    /*align-content: center;*/
     height: fit-content;
     box-sizing: border-box;
     background-color: white;
