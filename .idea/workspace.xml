@@ -56,8 +56,8 @@
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
-}]]></component>
-  <component name="RunManager" selected="Python.index">
+}</component>
+  <component name="RunManager" selected="Flask server.KiemThuPhanMem">
     <configuration name="index" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="KiemThuPhanMem" />
       <option name="ENV_FILES" value="" />
@@ -83,13 +83,13 @@
     </configuration>
     <configuration name="KiemThuPhanMem" type="Python.FlaskServer">
       <module name="KiemThuPhanMem" />
-      <option name="target" value="$PROJECT_DIR$/__init__.py" />
+      <option name="target" value="$PROJECT_DIR$/Hangy/__init__.py" />
       <option name="targetType" value="PATH" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -121,6 +121,7 @@
       <workItem from="1774363755368" duration="1441000" />
       <workItem from="1774374863523" duration="2047000" />
       <workItem from="1774413679205" duration="3333000" />
+      <workItem from="1774893518093" duration="18000" />
     </task>
     <servers />
   </component>
