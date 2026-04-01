@@ -59,7 +59,7 @@
                         {% if current_user.is_authenticated %}
 
                         <div class="hello me-3 d-none d-md-block fw-bold" style="font-size: 0.95rem;">
-                           {% if current_user.id.startswith('101') %}
+                           {% if current_user.display_id.startswith('101') %}
                                <span class="badge bg-warning text-dark me-2">Shop</span>
                            {% endif %}
                            Xin chào, {{ current_user.username }}
@@ -80,7 +80,7 @@
                             <ul aria-labelledby="dropdownUser1"
                                 class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end text-small shadow">
                                 <li><h6 class="dropdown-header">User: {{ current_user.username }}</h6></li>
-                                <li><a class="dropdown-item" href="{{ url_for('main_bp.student_profile') }}">Đơn hàng của tôi</a></li>
+                                <li><a class="dropdown-item" href="{{ url_for('main_bp.index') }}">Đơn hàng của tôi</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
