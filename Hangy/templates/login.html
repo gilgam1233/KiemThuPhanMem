@@ -1,0 +1,51 @@
+{%extends 'base.html'%}
+
+{%block head%}
+{{super()}}
+<link href="{{ url_for('static', filename='css/login.css') }}" rel="stylesheet">
+{%endblock%}
+
+{%block content%}
+<div>
+    <div class="main">
+        <div>
+            <h3>ĐĂNG NHẬP</h3>
+            <p class="text-muted">Chào mừng bạn quay trở lại!</p>
+        </div>
+
+        {% if err_msg %}
+            <div class="alert alert-danger text-center py-2 mb-3">
+                {{ err_msg }}
+            </div>
+        {% endif %}
+
+        <form method="post" action="{{url_for('main_bp.login_process')}}">
+            <div class="form-floating mb-3">
+                <input class="form-control" id="username" name="username" placeholder="Tên đăng nhập" required type="text">
+                <label for="username">Tên đăng nhập</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input class="form-control" id="password" name="password" placeholder="Mật khẩu" required type="password">
+                <label for="password">Last name</label>
+            </div>
+
+
+            <div class="text-center mb-3">
+                <button class="btn btn-custom-primary btn-flogin fw-bold text-uppercase" type="submit">Đăng nhập</button>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="text-center mb-2">
+                <small class="text-muted fst-italic">Bạn chưa có tài khoản?</small>
+            </div>
+
+            <div class="text-center">
+                <a class="btn btn-register btn-outline-danger fw-bold" href="/register">Tạo tài khoản mới</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{%endblock%}
