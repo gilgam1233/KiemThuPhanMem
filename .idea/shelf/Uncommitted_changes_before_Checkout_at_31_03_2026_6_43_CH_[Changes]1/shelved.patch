@@ -1,0 +1,37 @@
+Index: .idea/KiemThuPhanMem.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module version=\"4\">\r\n  <component name=\"Flask\">\r\n    <option name=\"enabled\" value=\"true\" />\r\n  </component>\r\n  <component name=\"TemplatesService\">\r\n    <option name=\"TEMPLATE_CONFIGURATION\" value=\"Jinja2\" />\r\n    <option name=\"TEMPLATE_FOLDERS\">\r\n      <list>\r\n        <option value=\"$MODULE_DIR$/templates\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/KiemThuPhanMem.iml b/.idea/KiemThuPhanMem.iml
+--- a/.idea/KiemThuPhanMem.iml	(revision b54d620300a25dffbf5217d8779264df4c601d45)
++++ b/.idea/KiemThuPhanMem.iml	(date 1774957192440)
+@@ -7,7 +7,7 @@
+     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
+     <option name="TEMPLATE_FOLDERS">
+       <list>
+-        <option value="$MODULE_DIR$/templates" />
++        <option value="$MODULE_DIR$/Hangy/templates" />
+       </list>
+     </option>
+   </component>
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"Black\">\r\n    <option name=\"sdkName\" value=\"Python 3.12 (KiemThuPhanMem)\" />\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.12 (KiemThuPhanMem)\" project-jdk-type=\"Python SDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision b54d620300a25dffbf5217d8779264df4c601d45)
++++ b/.idea/misc.xml	(date 1774957192451)
+@@ -3,5 +3,5 @@
+   <component name="Black">
+     <option name="sdkName" value="Python 3.12 (KiemThuPhanMem)" />
+   </component>
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (KiemThuPhanMem)" project-jdk-type="Python SDK" />
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.14 (KiemThuPhanMem)" project-jdk-type="Python SDK" />
+ </project>
+\ No newline at end of file
