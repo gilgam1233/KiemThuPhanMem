@@ -1,0 +1,243 @@
+h1 {
+    color: darkred;
+}
+
+p {
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: whitesmoke;
+    position: relative;
+    justify-items: center;
+}
+
+/* HEADER */
+.main-header {
+    z-index: 1000;
+    width: 100%;
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    transition: all 0.3s ease;
+    background-color: #212529;
+}
+
+.main-header .nav-link, .navbar-brand{
+    color: white;
+}
+
+
+.main-header.scrolled {
+    background-color: white !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 0;
+}
+
+.main-header.scrolled .nav-link, .main-header.scrolled .navbar-brand, .main-header.scrolled .dropdown-toggle::after, .main-header.scrolled .bi-person-circle{
+    color: black !important;
+}
+
+.hello {
+    color: white;
+}
+
+.main-header.scrolled .hello {
+    color: limegreen;
+}
+
+.main-header.scrolled .cart i {
+    color: darkred;
+}
+.main-header.scrolled .navbar-toggler {
+    color: black;
+}
+
+
+.container-fluid {
+    padding: 0;
+}
+
+
+.navbar {
+    padding: 0.5rem;
+    background-color: transparent;
+}
+
+.navbar-toggler {
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-color: gray;
+    outline: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+.navbar-nav > div {
+    padding: 0.2rem;
+    align-content: center;
+}
+
+#navbarSupportedContent {
+    justify-content: space-between;
+    padding: 0;
+}
+
+.searchbar {
+    gap: 0.25rem;
+    display: none !important;
+}
+
+
+.btn-search {
+    color: black;
+    border: 1px solid #064727;
+    border-radius: 0.25rem;
+    background-color: greenyellow;
+}
+
+.btn-search:hover {
+    background-color: limegreen;
+    color: white;
+}
+
+.cart {
+    border-radius: 1rem;
+}
+
+.cart a:hover {
+    background-color: rgb(173, 255, 47);
+}
+
+.cart a {
+    padding: 0.2rem;
+    gap: 5px
+}
+
+.btn-cart p {
+    display: none;
+}
+
+.cart i {
+    color: limegreen;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.btn-login {
+    background-color: darkred;
+    border-radius: 0.5rem;
+    height: 100%;
+    align-content: center;
+}
+
+.btn-login:hover {
+    background-color: rgb(173, 255, 47);
+}
+
+
+.login {
+    margin: 0;
+    padding-right: 0;
+}
+
+/* FOOTER */
+footer {
+    background-color: #064727;
+    color: white;
+    margin: 0 !important;
+    width: 100% !important;
+    width: 100%;
+    padding: 4rem;
+}
+
+footer > div {
+    display: flex;
+    padding: 2rem;
+    padding-top: 0;
+    justify-items: center;
+}
+
+footer > div > div {
+    margin-top: 1rem;
+}
+
+.about {
+    width: 45%;
+}
+
+.about li {
+    line-height: 2.2;
+}
+
+footer li {
+    margin-bottom: 1rem !important;
+}
+
+footer > div:first-child {
+    justify-content: space-evenly;
+}
+
+footer p, footer a {
+    color: white !important;
+}
+
+footer h5 {
+    margin-bottom: 1rem;
+    color: yellow;
+}
+
+.cre {
+    margin-bottom: 0;
+    display: flex;
+}
+
+.cre p, .cre ul {
+    padding-top: 2rem;
+}
+
+
+/* RESPONSIVE */
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 992px) {
+    footer > div:first-child {
+        flex-direction: column !important;
+    }
+
+    footer > div > div {
+        width: 100% !important;
+    }
+
+    .navbar-nav > div {
+        padding: 0.5rem 0;
+    }
+
+    .btn-cart p {
+        display: block;
+        color: #7c7c7d;
+    }
+
+    .searchbar {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 725px) {
+    .cre {
+        flex-direction: column !important;
+    }
+
+}
