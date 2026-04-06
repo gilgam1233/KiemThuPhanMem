@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{%block head%}
+{{super()}}
+<link href="{{ url_for('static', filename='css/order_history.css') }}" rel="stylesheet">
+{%endblock%}
+
+{% block content %}
+<div class="main w-75 p-4">
+    <h1 class="text-success text-center mt-2 mb-4">DANH SÁCH ĐƠN HÀNG</h1>
+    {% if list_orders %}
+    <table class="table">
+        <tr>
+            <th id="created-date">Ngày tạo</th>
+            <th id="voucher-code">Mã giảm giá</th>
+            <th id="final-amount">Tổng tiền</th>
+            <th id="status">Trạng thái</th>
+        </tr>
+        {% for o in list_orders %}
+        <tr>
+            <td>{{o.created_at}}</td>
+            <td>{{o.code}}</td>
+            <td>{{"{:,.0f}".format(o.final_amount)}} ₫</td>
+            <td>{{o.status}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <div class="alert alert-warning mt-2">
+        Chưa có đơn hàng nào!
+    </div>
+    {%endif%}
+
+
+
+
+</div>
+
+
+{% endblock %}
