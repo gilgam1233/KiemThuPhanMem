@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="68e118ae-1841-4a08-a699-2de6c9fba73d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="5aefd2b1-ebad-465d-a95b-5fa39e2fac78" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Hangy/static/css/admin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/templates/admin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/templates/admin/master.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/routes/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/routes/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/services/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/services/product_services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/static/css/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/services/user_services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/static/js/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +15,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -32,46 +24,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Python.index.executor": "Run",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "git-widget-placeholder": "index__api",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "git-widget-placeholder": "setup/admin",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="index" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="KiemThuPhanMem" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hangy" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hangy/index.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.index" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="TaskManager">
     <servers />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/KiemThuPhanMem$index.coverage" NAME="index Coverage Results" MODIFIED="1775034664680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hangy" />
   </component>
 </project>

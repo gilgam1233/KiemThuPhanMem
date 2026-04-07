@@ -6,28 +6,49 @@
 {%endblock%}
 
 {%block content%}
-<div class="isearchbar d-flex">
-    <input aria-label="Search" class="form-control me-2" placeholder="Nhập từ khóa cần tìm" type="search">
-    <button class="btn btn-search" type="submit">Tìm</button>
-</div>
+<form class="isearchbar d-flex">
+    <div class="d-flex w-100">
+        <input aria-label="Search" class="form-control me-2" placeholder="Nhập từ khóa cần tìm" type="search">
+        <button class="btn btn-search" type="submit">Tìm</button>
+    </div>
+</form>
+
+{% if list_products %}
 <div class="products">
 
-    {%for c in list_products%}
+    {%for p in list_products%}
     <div class="product">
         <div class="img">
-            <img src="{{c.image}}">
+            {%if p.image%}
+            <img src="{{p.image}}">
+            {%else%}
+            <img src="https://res.cloudinary.com/dczihneby/image/upload/q_auto/f_auto/v1775495232/Image-not-found_m7xpyi.png">
+            {%endif%}
         </div>
         <div class="info">
-            <h6>{{c.name}}</h6>
-            <p>{{ "{:,.0f}".format(c.price) | replace(",", ".") }} &#8363;</p>
+            <h6>{{p.name}}</h6>
+            <p>{{ "{:,.0f}".format(p.price)}} &#8363;</p>
         </div>
+        {% if current_user.is_authenticated %}
         <div class="btn-add-cart">
-            <button>Thêm vào giỏ hàng</button>
+            <button onclick="addToCart('{{p.id}}', '{{p.name}}', '{{p.price}}')">Thêm vào giỏ hàng</button>
         </div>
-    </div>
-    {%endfor%}
+        {%else%}
+        <div class="btn-add-cart">
+            <button><a href="/login">Thêm vào giỏ hàng</a></button>
+        </div>
+        {%endif%}
 
+    </div>
+
+    {%endfor%}
 </div>
+{%else%}
+<div class="alert alert-warning text-center w-75 p-4 m-4">
+    <h3>Hiện chưa có sản phẩm nào! Xin vui lòng quay lại sau!</h3>
+</div>
+{%endif%}
+
 
 {% if total_pages > 1 %}
 <nav aria-label="Page navigation example" class="mt-4 mb-4">
