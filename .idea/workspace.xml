@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cffd7dbb-fec2-4b31-983a-8d9af45fbf64" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Hangy/static/css/order_history.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hangy/templates/order_history.html" afterDir="false" />
+    <list default="true" id="5aefd2b1-ebad-465d-a95b-5fa39e2fac78" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Hangy/static/css/admin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/templates/admin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/templates/admin/master.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +25,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
-    "git-widget-placeholder": "setup/order__history",
+    "git-widget-placeholder": "setup/admin",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>

@@ -1,0 +1,84 @@
+{% extends 'admin/master.html' %}
+
+    {% block body %}
+    <div class="card shadow-sm p-4">
+        <div class="row">
+            <div class="col-md-3 text-center border-right">
+                {% if current_user.profile.avatar %}
+                <img alt="Avatar" class="img-thumbnail rounded-circle mb-3" src="{{ current_user.profile.avatar }}"
+                     style="width: 150px; height: 150px; object-fit: cover;">
+                {% else %}
+                <img alt="Avatar"
+                     class="img-thumbnail rounded-circle mb-3"
+                     src="https://ui-avatars.com/api/?name={{ current_user.username }}&background=dc3545&color=fff&size=150">
+                {% endif %}
+
+                <h4 class="font-weight-bold mb-1">{{ current_user.username }}</h4>
+                <span class="badge badge-danger px-3 py-2 text-uppercase">{{ current_user.role }}</span>
+
+            </div>
+
+            <div class="col-md-9 pl-md-4">
+                <h5 class="border-bottom pb-2 text-muted">Hồ sơ cá nhân</h5>
+
+                <table class="table table-borderless mt-3">
+                    <tbody>
+                    {% if current_user.profile %}
+                    <tr>
+                        <th style="width: 25%; color: #555;">Họ và tên:</th>
+                        <td class="font-weight-bold">{{ current_user.profile.first_name }} {{
+                            current_user.profile.last_name }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="color: #555;">Email:</th>
+                        <td>{{ current_user.profile.email }}</td>
+                    </tr>
+                    <tr>
+                        <th style="color: #555;">Số điện thoại:</th>
+                        <td>{{ current_user.profile.phone }}</td>
+                    </tr>
+                    <tr>
+                        <th style="color: #555;">Địa chỉ:</th>
+                        <td>{{ current_user.profile.address }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td class="text-danger font-italic" colspan="2">
+                            Chưa có thông tin chi tiết trong bảng Profile.
+                        </td>
+                    </tr>
+                    {% endif %}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm p-4">
+        <div class="flex-columns">
+            <h5 class="text-muted border-bottom">Tiện ích</h5>
+            <div class="d-flex gap extension">
+                <div>
+                    <a class="btn btn-primary" href="{{url_for('user.create_view')}}">Tạo người dùng mới</a>
+                </div>
+                <div>
+                    <a class="btn btn-info" href="{{url_for('profile.create_view')}}">Tạo hồ sơ mới</a>
+                </div>
+                <div>
+                    <a class="btn btn-secondary" href="{{url_for('product.create_view')}}">Tạo sản phẩm mới</a>
+                </div>
+                <div>
+                    <a class="btn btn-warning" href="{{url_for('order.create_view')}}">Tạo đơn hàng mới</a>
+                </div>
+                <div>
+                    <a class="btn btn-dark" href="{{url_for('voucher.create_view')}}">Tạo mã giảm giá mới</a>
+                </div>
+                <div>
+                    <a class="btn btn-success" href="{{url_for('uservoucher.create_view')}}">Tạo User-Voucher mới</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
