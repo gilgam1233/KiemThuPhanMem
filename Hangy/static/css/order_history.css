@@ -1,0 +1,24 @@
+/* DIV */
+.main > div {
+    /*gap: 1rem;*/
+    flex-wrap: wrap;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .main {
+        width: 80% !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .main {
+        width: 90% !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .main {
+        width: 100% !important;
+    }
+}

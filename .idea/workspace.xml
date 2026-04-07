@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="eafb3885-9473-47e3-88fd-d3c53ff6ca46" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Hangy/static/css/cart.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hangy/templates/cart.html" afterDir="false" />
+    <list default="true" id="5aefd2b1-ebad-465d-a95b-5fa39e2fac78" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Hangy/static/css/admin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/templates/admin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/templates/admin/master.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,17 +20,12 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="setup/login" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
-    "git-widget-placeholder": "setup/cart",
+    "git-widget-placeholder": "setup/admin",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
