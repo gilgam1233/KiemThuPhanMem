@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{%block head%}
+{{super()}}
+<link href="{{ url_for('static', filename='css/cart.css') }}" rel="stylesheet">
+{%endblock%}
+
+{% block content %}
+<div class="main w-75 p-4">
+    <h1 class="text-success text-center mt-2 mb-4">GIỎ HÀNG</h1>
+    {% if session.get('cart') %}
+    <table class="table">
+        <tr>
+            <th id="id">Id</th>
+            <th id="name">Sản phẩm</th>
+            <th id="price">Đơn giá</th>
+            <th id="quantity">Số lượng</th>
+            <th id="item-total">Thành tiền</th>
+            <th id="del"></th>
+        </tr>
+        {% for c in session['cart'].values() %}
+        <tr id="cart{{c.id}}">
+            <td>{{c.id}}</td>
+            <td>{{c.name}}</td>
+            <td>{{ "{:,.0f}".format(c.price)}} ₫</td>
+            <td>
+                <input class="form-control" type="number" value="{{c.quantity}}" oninput="updateCart({{c.id}},this)"/>
+            </td>
+            <td id="item-total-{{c.id}}">{{ "{:,.0f}".format(c.price*c.quantity)}} ₫</td>
+            <td class="text-center">
+                <button class="btn btn-outline-danger" onclick="deleteCart({{c.id}})">&times;</button>
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+
+    <div class="d-flex w-100 justify-content-around">
+        <div class="total w-50  alert alert-warning">
+            <table class="w-100">
+                <tr>
+                    <td>Tổng tiền hàng:</td>
+                    <td id="total-amount" data-total="{{ total_amount }}">{{ "{:,.0f}".format(total_amount) }} ₫</td>
+                </tr>
+                <tr>
+                    <td>Tổng cộng voucher giảm giá: </td>
+                    <td id="voucher-discount">0 ₫</td>
+                </tr>
+                <tr>
+                    <td>Tổng thanh toán:</td>
+                    <td id="final-amount">{{ "{:,.0f}".format(total_amount) }} ₫</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="voucher w-50">
+            <div class="d-flex w-100">
+                <p class="w-50 text-end p-2 text-danger">Chọn mã giảm giá: </p>
+                <select class="form-select w-50" id="voucher-select" onchange="applyVoucher()">
+                    <option value="" data-type="NONE" data-value="0">-- Không dùng --</option>
+                    {%for v in list_vouchers%}
+                    <option value="{{v.code}}" data-type="{{v.discount_type}}" data-value="{{v.discount_value}}">{{v.code}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+            <div class="pay">
+                <button class="btn btn-pay btn-danger w-100" onclick="pay()">Thanh toán</button>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="alert alert-warning mt-2">
+        Không có sản phẩm trong giỏ hoăc giỏ đã thanh toán!
+    </div>
+    {%endif%}
+</div>
+{% endblock %}

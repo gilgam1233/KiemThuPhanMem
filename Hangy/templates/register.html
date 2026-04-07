@@ -1,0 +1,94 @@
+{%extends 'base.html'%}
+
+{%block head%}
+{{super()}}
+<link href="{{ url_for('static', filename='css/register.css') }}" rel="stylesheet">
+{%endblock%}
+
+{%block content%}
+<div>
+    <div class="main">
+        <div>
+            <h3>ĐĂNG KÝ</h3>
+            <p class="text-muted">Chào mừng bạn quay trở lại!</p>
+        </div>
+
+
+        <form action="/register" enctype="multipart/form-data" method="post">
+            <div class="text-center mb-4">
+                <img alt="Avatar Preview"
+                     class="rounded-circle border mb-3"
+                     id="avatarPreview" src="https://res.cloudinary.com/du9oap5y2/image/upload/v1764921187/user_icon_izjcfk.png"
+                     style="width: 100px; height: 100px; object-fit: cover; cursor: pointer;">
+                <br>
+
+            </div>
+
+            <div class="form-floating mb-3">
+                <span>Avatar: </span>
+                <input id="avatarInput" name="avatar" type="file">
+            </div>
+
+            <div class="form-floating mb-3">
+                <input class="form-control" id="last_name" name="last_name" placeholder="Last name" required
+                       type="text">
+                <label for="last_name">Họ</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input class="form-control" id="first_name" name="first_name" placeholder="First name" required
+                       type="text">
+                <label for="first_name">Tên</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input class="form-control" id="email" name="email" placeholder="Email" required type="email">
+                <label for="email">Email</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input class="form-control" id="phone" name="phone" placeholder="Số điện thoại" required
+                       type="tel">
+                <label for="phone">Số điện thoại</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input class="form-control" id="address" name="address" placeholder="Địa chỉ" type="text">
+                <label for="address">Địa chỉ</label>
+            </div>
+
+            <hr>
+
+            <div class="form-floating mb-3">
+                <input class="form-control" id="username" name="username" placeholder="Tên đăng nhập"
+                       required type="text">
+                <label for="username">Tên đăng nhập</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input class="form-control" id="password" name="password" placeholder="Mật khẩu" required
+                       type="password">
+                <label for="password">Mật khẩu</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input class="form-control" id="confirm_password" name="confirm_password" placeholder="Nhập lại mật khẩu"
+                       required type="password">
+                <label for="confirm_password">Nhập lại mật khẩu</label>
+            </div>
+
+            <div class="d-grid mb-3">
+                <button class="btn btn-register btn-custom-danger btn-lg fw-bold text-uppercase py-3" type="submit">Đăng ký
+                    ngay
+                </button>
+            </div>
+
+            <div class="text-center mt-3">
+                <p class="small">Đã có tài khoản? <a class="btn-flogin text-decoration-none fw-bold" href="/login">Đăng
+                    nhập</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,98 @@
+/* TABLE - DS GIỎ HÀNG */
+#id {
+    width: 5%;
+}
+#name {
+    width: 30%;
+}
+#price {
+    width: 20%;
+}
+#quantity {
+    width: 20%;
+}
+#item-total {
+    width: 20%;
+}
+#del {
+    width: 5%;
+}
+
+/* DIV */
+.main > div {
+    flex-wrap: wrap;
+}
+
+/* TOTAL */
+.total {
+    margin: 0;
+}
+
+
+table td:last-child {
+    text-align: right;
+}
+
+
+
+/* VOUCHER */
+.voucher {
+    padding-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.voucher p {
+    font-weight: bold;
+    padding-left: 0 !important;
+}
+
+
+/* PAY */
+.pay {
+    justify-self: right;
+    width: 40%;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .main {
+        width: 80% !important;
+    }
+
+    .total, .voucher {
+        width: 100% !important;
+        padding: 1rem!important;
+    }
+
+    .voucher {
+        padding: 1rem 0 0 0 !important;
+    }
+
+    .voucher p {
+        text-align: left!important;
+    }
+
+    .pay {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .main {
+        width: 90% !important;
+    }
+
+    .pay {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .main {
+        width: 100% !important;
+    }
+}
