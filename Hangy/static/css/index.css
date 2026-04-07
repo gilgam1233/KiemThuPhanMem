@@ -1,0 +1,122 @@
+/* SEARCHBAR */
+.isearchbar {
+    padding: 2rem;
+    padding-bottom: 0;
+    width: 50%;
+}
+
+
+/* PRODUCTS */
+.products {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    gap: 2rem;
+    padding: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    justify-items: center;
+}
+
+/* PRODUCT */
+.product {
+    width: 100%;
+    min-width: 200px;
+    max-width: 350px;
+    height: fit-content;
+    background-color: white;
+    border: 1px solid #dfdfdf;
+    border-radius: 1rem;
+}
+
+.product:hover {
+    border-color: limegreen;
+    transform: translateY(-3px);
+    transition: transform 0.3s ease-out;
+}
+
+.img {
+    width: 100%;
+    background-color: transparent;
+    height: 14rem;
+    border-bottom: 1px solid lightgray;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    display: flex;
+    overflow: hidden;
+}
+
+.img > img {
+    border-radius: 1rem 1rem 0 0;
+    width: 100%;
+    height: 100%;
+    justify-self: center;
+    margin: auto;
+}
+
+.info {
+    background-color: transparent;
+    padding: 1rem;
+    align-content: center;
+}
+
+.info h6 {
+    height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.info p {
+    font-size: 18px;
+    color: red;
+    font-weight: bold;
+}
+
+.btn-add-cart {
+    width: 100%;
+    padding: 0 1rem 1rem 0;
+    display: flex;
+    justify-content: right;
+}
+
+.btn-add-cart button {
+    border: 2px solid darkgreen;
+    border-radius: 1rem;
+    padding: 0.2rem 0.5rem;
+    background: greenyellow;
+}
+
+.btn-add-cart button:active {
+    filter: brightness(0.8);
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .isearchbar {
+        width: 60%;
+    }
+}
+
+@media (max-width: 992px) {
+    .isearchbar {
+        width: 70%;
+    }
+}
+
+@media (max-width: 650px) {
+    .isearchbar {
+        width: 90%;
+    }
+}
+
+/* ANIMATION */
+@keyframes chay_chu {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100vw);
+        }
+}
+
