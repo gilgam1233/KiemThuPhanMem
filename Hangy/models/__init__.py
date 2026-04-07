@@ -18,15 +18,20 @@ class OrderStatus(enum.Enum):
 
 
 class User(db.Model, UserMixin):
-    id = db.Column(db.String(10), primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String(30), nullable=False, unique=True)
     password = db.Column(db.String(50), nullable=False)
     role = db.Column(db.String(20))
 
     __mapper_args__ = {
         'polymorphic_identity': 'user',
+
         'polymorphic_on': role
     }
+
+    @property
+    def display_id(self):
+        return str(1000000 + self.id)
 
 
 class Admin(User):
@@ -50,7 +55,8 @@ class Profile(db.Model):
     address = db.Column(db.String(100), nullable=False)
     avatar = db.Column(db.String(100))
 
-    user_id = db.Column(db.String(10), db.ForeignKey('user.id'), nullable=False)
+
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     user = db.relationship('User', backref=db.backref('profile', uselist=False))
 
 
@@ -73,7 +79,7 @@ class Voucher(db.Model):
 
 class UserVoucher(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.String(10), db.ForeignKey('user.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     voucher_id = db.Column(db.Integer, db.ForeignKey('voucher.id'), nullable=False)
     used_given = db.Column(db.Integer, default=1)  # Số lần admin cấp
     current_uses = db.Column(db.Integer, default=0)  # Số lần đã dùng
@@ -88,7 +94,7 @@ class Product(db.Model):
 
 class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.String(10), db.ForeignKey('user.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     voucher_id = db.Column(db.Integer, db.ForeignKey('voucher.id'), nullable=True)
 
     total_amount = db.Column(db.Float, nullable=False)
