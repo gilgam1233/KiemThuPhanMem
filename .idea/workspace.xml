@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5aefd2b1-ebad-465d-a95b-5fa39e2fac78" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +15,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -43,7 +42,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "setup/base",
+    "git-widget-placeholder": "setup/admin",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "C:/TRAN PHUONG VY/1041570724/NAM_3_HK_2/KIEM THU PHAN MEM/KiemThuPhanMem",
     "node.js.detected.package.eslint": "true",
@@ -86,7 +85,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1775586117314</updated>
-      <workItem from="1775586118352" duration="65000" />
+      <workItem from="1775586118352" duration="231000" />
     </task>
     <servers />
   </component>
