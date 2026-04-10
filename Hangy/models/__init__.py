@@ -1,8 +1,18 @@
 import enum
 from datetime import datetime
+from Hangy import db
 from flask_login import UserMixin
-from sqlalchemy.orm import validates
-from Hangy import db, app
+from sqlalchemy import (
+    Column,
+    Enum,
+    Integer,
+    Boolean,
+    DateTime,
+    String,
+    Float,
+    ForeignKey,
+)
+from sqlalchemy.orm import validates, relationship
 
 
 class DiscountEnum(enum.Enum):
@@ -17,91 +27,109 @@ class OrderStatus(enum.Enum):
     CANCELED = 3
 
 
-class User(db.Model, UserMixin):
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    username = db.Column(db.String(30), nullable=False, unique=True)
-    password = db.Column(db.String(50), nullable=False)
-    role = db.Column(db.String(20))
-
-    __mapper_args__ = {
-        'polymorphic_identity': 'user',
-
-        'polymorphic_on': role
-    }
-
-    @property
-    def display_id(self):
-        return str(1000000 + self.id)
+class UserRoleEnum(enum.Enum):
+    ADMIN = 0
+    USER = 1
 
 
-class Admin(User):
-    __mapper_args__ = {'polymorphic_identity': 'admin'}
-
-    def can_create_voucher(self): return True
-
-
-class Shop(User):
-    __mapper_args__ = {'polymorphic_identity': 'shop'}
-
-    def can_upload_product(self): return True
+class BaseModel(db.Model):
+    __abstract__ = True
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    is_active = Column(Boolean, default=True)
+    created_date = Column(DateTime, default=datetime.now)
 
 
-class Profile(db.Model):
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    first_name = db.Column(db.String(30), nullable=False)
-    last_name = db.Column(db.String(30), nullable=False)
-    phone = db.Column(db.String(15), nullable=False)
-    email = db.Column(db.String(50), nullable=False)
-    address = db.Column(db.String(100), nullable=False)
-    avatar = db.Column(db.String(100))
+class Category(BaseModel):
+    __tablename__ = "categories"
+    name = Column(String(50), nullable=False, unique=True)
+    products = relationship("Product", backref="category", lazy=True)
+
+    def __str__(self):
+        return self.name
 
 
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    user = db.relationship('User', backref=db.backref('profile', uselist=False))
+class User(BaseModel, UserMixin):
+    __tablename__ = "users"
+    username = Column(String(30), nullable=False, unique=True)
+    password = Column(String(255), nullable=False)
+    role = Column(Enum(UserRoleEnum), default=UserRoleEnum.USER)
+    first_name = Column(String(30))
+    last_name = Column(String(30))
+    email = Column(String(50), unique=True)
+    phone = Column(String(15))
+    address = Column(String(255))
+    avatar = Column(String(255), default="cloudinary_link")  # đưa về cloudinary sau
+
+    orders = relationship("Order", backref="user", lazy=True)
+    vouchers = relationship("UserVoucher", backref="user", lazy=True)
 
 
-class Voucher(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    code = db.Column(db.String(50), unique=True, nullable=False)
-    discount_type = db.Column(db.Enum(DiscountEnum), nullable=False)
-    discount_value = db.Column(db.Float, nullable=False)
-    start_date = db.Column(db.DateTime, default=datetime.now)
-    end_date = db.Column(db.DateTime, nullable=False)
-    usage_limit = db.Column(db.Integer, default=1)
-    is_active = db.Column(db.Boolean, default=True)
+class Product(BaseModel):
+    __tablename__ = "products"
+    name = Column(String(100), nullable=False)
+    price = Column(Float, nullable=False)
+    image = Column(String(255), default="cloudinary_link")  # đưa về cloudinary sau
 
-    @validates('discount_value')
+    category_id = Column(Integer, ForeignKey(Category.id))
+    order_items = relationship("OrderDetail", backref="product", lazy=True)
+
+
+class Voucher(BaseModel):
+    __tablename__ = "vouchers"
+
+    code = Column(String(50), unique=True, nullable=False)
+    discount_type = Column(Enum(DiscountEnum), nullable=False)
+    discount_value = Column(Float, nullable=False)
+    end_date = Column(DateTime, nullable=False)
+
+    user_vouchers = relationship("UserVoucher", backref="voucher", lazy=True)
+
+    @validates("discount_value")
     def validate_discount(self, key, value):
+        if value < 0:
+            raise ValueError("Giá trị giảm giá không hợp lệ!")
         if self.discount_type == DiscountEnum.PERCENT and value > 50:
-            raise ValueError("Mã giảm giá phần trăm không được quá 50%")
+            raise ValueError("Giảm giá phần trăm không được quá 50%!")
         return value
 
 
-class UserVoucher(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    voucher_id = db.Column(db.Integer, db.ForeignKey('voucher.id'), nullable=False)
-    used_given = db.Column(db.Integer, default=1)  # Số lần admin cấp
-    current_uses = db.Column(db.Integer, default=0)  # Số lần đã dùng
+class UserVoucher(BaseModel):
+    __tablename__ = "users_vouchers"
+    user_id = Column(Integer, ForeignKey(User.id), nullable=False)
+    voucher_id = Column(Integer, ForeignKey(Voucher.id), nullable=False)
+    order_id = Column(Integer, ForeignKey("orders.id"), unique=True, nullable=True)
+
+    is_used = Column(Boolean, default=False)
+    used_date = Column(DateTime, default=None)
 
 
-class Product(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    price = db.Column(db.Float, nullable=False)
-    image = db.Column(db.String(100))
+class Order(BaseModel):
+    __tablename__ = "orders"
+    total_amount = Column(Float, nullable=False)
+    final_amount = Column(Float, nullable=False)
+    status = Column(Enum(OrderStatus), default=OrderStatus.PENDING)
+
+    user_id = Column(Integer, ForeignKey(User.id), nullable=False)
+    details = relationship("OrderDetail", backref="order", lazy=True)
+
+    applied_voucher = relationship(
+        "UserVoucher", backref="applied_order", uselist=False, lazy=True
+    )
 
 
-class Order(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    voucher_id = db.Column(db.Integer, db.ForeignKey('voucher.id'), nullable=True)
+class OrderDetail(db.Model):
+    __tablename__ = "order_details"
 
-    total_amount = db.Column(db.Float, nullable=False)
-    final_amount = db.Column(db.Float, nullable=False)
-    status = db.Column(db.Enum(OrderStatus), default=OrderStatus.PENDING)
-    created_at = db.Column(db.DateTime, default=datetime.now)
+    order_id = Column(Integer, ForeignKey(Order.id), primary_key=True)
+    product_id = Column(Integer, ForeignKey(Product.id), primary_key=True)
+
+    quantity = Column(Integer, nullable=False, default=1)
+    price = Column(Float, nullable=False)
 
 
-with app.app_context():
-    db.create_all()
+if __name__ == "__main__":
+    from Hangy import app
+
+    with app.app_context():
+        db.create_all()
+

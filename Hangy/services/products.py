@@ -1,5 +1,6 @@
 from Hangy.models import Product
 
+
 def load_products(kw=None, page=1, page_size=6):
     query = Product.query
 
