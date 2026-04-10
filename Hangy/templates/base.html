@@ -50,13 +50,13 @@
                 </div>
                 <div>
                     <form class="d-flex navbar-nav">
+                        {% if current_user.is_authenticated %}
                         <div class="cart">
                             <a class="btn btn-cart d-flex" href="/cart">
                                 <i class="bi bi-cart4"></i>
                                 <p> Giỏ hàng</p>
                             </a>
                         </div>
-                        {% if current_user.is_authenticated %}
 
                         <div class="hello me-3 d-none d-md-block fw-bold" style="font-size: 0.95rem;">
                            {% if current_user.role == 'shop' %}
@@ -89,6 +89,12 @@
                         </div>
 
                         {%else%}
+                            <div class="cart">
+                            <a class="btn btn-cart d-flex" href="/login">
+                                <i class="bi bi-cart4"></i>
+                                <p> Giỏ hàng</p>
+                            </a>
+                        </div>
                         <div class="d-flex login align-items-center mt-lg-0 justify-content-lg-end">
                             <a class="btn btn-login btn-outline-light px-4 fw-bold btn-sm" href="/login"
                                target="_blank">
