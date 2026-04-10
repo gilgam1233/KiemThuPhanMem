@@ -59,7 +59,7 @@
                         {% if current_user.is_authenticated %}
 
                         <div class="hello me-3 d-none d-md-block fw-bold" style="font-size: 0.95rem;">
-                           {% if current_user.display_id.startswith('101') %}
+                           {% if current_user.role == 'shop' %}
                                <span class="badge bg-warning text-dark me-2">Shop</span>
                            {% endif %}
                             Xin chào, {{ current_user.profile.last_name }} {{ current_user.profile.first_name }}
