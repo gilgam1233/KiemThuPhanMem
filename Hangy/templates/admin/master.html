@@ -37,14 +37,11 @@
 <div class="container flex-column">
     <div class="navbar-head p-4 d-flex justify-content-end">
         <div class="hello me-3 d-none d-md-block fw-bold" style="font-size: 0.95rem;">
-            {% if current_user.id.startswith('101') %}
-            <span class="badge bg-warning text-dark me-2">Shop</span>
-            {% endif %}
-            Xin chào, {{ current_user.profile.last_name }} {{ current_user.profile.first_name }}
+            Xin chào, {{ current_user.last_name }} {{ current_user.first_name }}
         </div>
         <div class="dropdown">
-            {% if current_user.profile.avatar %}
-            <img alt="avatar" class="rounded-circle border border-white" height="32" src="{{ current_user.profile.avatar }}"
+            {% if current_user.avatar %}
+            <img alt="avatar" class="rounded-circle border border-white" height="32" src="{{ current_user.avatar }}"
                  width="32">
             {% else %}
             <i class="bi bi-person-circle"></i>

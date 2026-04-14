@@ -13,8 +13,96 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
+    let cartLocal = localStorage.getItem('cart-quantity')
+    let cartNumber = document.getElementById('total-quantity')
 
+    if (cartNumber && cartLocal && parseInt(cartLocal) > 0) {
+        cartNumber.innerText = cartLocal;
+    }
+
+    const uploadBtn = document.getElementById("upload_widget");
+    if (uploadBtn)
+    {
+        var myWidget = cloudinary.createUploadWidget({
+            cloudName: 'dvvvepfpu',
+            uploadPreset: 'hangy_cloudinary',
+            sources: ['local', 'url', 'camera'],
+            multiple: false,
+            cropping: true,
+            croppingAspectRatio: 1,
+            showSkipCropButton: false,
+            folder: 'hangy'
+        }, (error, result) => {
+            if (!error && result && result.event === "success") {
+                var imageUrl = result.info.secure_url;
+                const previewImg = document.getElementById("avatarPreview");
+                if (previewImg) previewImg.src = imageUrl;
+
+                const avatarInput = document.getElementById("avatarInput");
+                if (avatarInput) avatarInput.value = imageUrl;
+
+                const newAvatarInput = document.getElementById("newAvatarInput");
+                if (newAvatarInput) newAvatarInput.value = imageUrl;
+
+                const updateForm = document.getElementById("avatarUpdateForm");
+                if (updateForm) updateForm.submit();
+            }
+        });
+        uploadBtn.addEventListener("click", function(){ myWidget.open(); }, false);
+    }
 });
+
+function loginProcess() {
+    fetch('/login', {
+        method: 'POST',
+        body: new FormData(document.getElementById('loginForm'))
+    }).then(res => res.json()).then(data => {
+        if (data.status==='success') {
+            Swal.fire({
+                title: "Thành công",
+                icon: "success",
+                showConfirmButton: false,
+                timer: 1000
+            }).then(() =>
+                window.location.href=data.next)
+        }
+        else {
+            Swal.fire({
+                title: "Đăng nhập thất bại",
+                text: data.message,
+                icon: "error"
+            })
+
+        }
+    }).catch(err => {
+        Swal.fire('Lỗi', 'Không thể kết nối đến máy chủ. Vui lòng thử lại sau!', 'error');
+    })
+}
+
+function registerProcess() {
+    fetch('/register', {
+        method: 'POST',
+        body: new FormData(document.getElementById('registerForm'))
+    }).then(res => res.json()).then(data => {
+        if (data.status==='success') {
+            Swal.fire({
+                title: "Đăng ký thành công",
+                icon: "success",
+                showConfirmButton: false,
+                timer: 1000
+            }).then(() => window.location.href='/login')
+        }
+        else {
+            Swal.fire({
+                title: "Đăng ký thất bại",
+                text: data.message,
+                icon: "error"
+            })
+        }
+    }).catch(err => {
+        Swal.fire('Lỗi', 'Không thể kết nối đến máy chủ. Vui lòng thử lại sau!', 'error');
+    })
+}
 
 
 function addToCart(id, name, price) {
@@ -29,7 +117,18 @@ function addToCart(id, name, price) {
             'Content-Type': 'application/json'
         }
     })
-    .then(res => res.json());
+    .then(res => res.json()).then(data => {
+        Swal.fire({
+            title: data.message,
+            icon: "success",
+            showConfirmButton: false,
+            timer: 1000
+        });
+
+        localStorage.setItem('cart-quantity',data.total_quantity);
+        document.getElementById('total-quantity').innerText = data.total_quantity;
+
+    });
 }
 
 function updateCart(id, obj) {
@@ -54,6 +153,12 @@ function updateCart(id, obj) {
     })
     .then(res => res.json())
     .then(data => {
+        // cập nhật cart number
+        let cartNumber = document.getElementById('total-quantity');
+        if (cartNumber) {
+            cartNumber.innerText = data.total_quantity
+        }
+
         // cập nhật "Thành tiền" của  riêng 1 sản phẩm
         let itemTotal = document.getElementById(`item-total-${id}`);
         if (itemTotal) {
@@ -69,11 +174,29 @@ function updateCart(id, obj) {
         }
 
         applyVoucher();
+        localStorage.setItem('cart-quantity',data.total_quantity);
+        document.getElementById('total-quantity').innerText = data.total_quantity;
     });
 }
 
 function deleteCart(id) {
-    if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?")) {
+    Swal.fire({
+        title: "Chắc chắn xoá?",
+        text: "Bạn có chắc chắn muốn xoá sản phẩm khỏi giỏ hàng? Không thể hoàn tác thao tác!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Xác nhận",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: "Thành công!",
+                text: "Đã xoá sản phẩm khỏi giỏ hàng.",
+                icon: "success",
+                showConfirmButton: false,
+                timer: 1000
+            });
         fetch('/api/delete-cart', {
             method: 'DELETE',
             body: JSON.stringify({
@@ -90,6 +213,12 @@ function deleteCart(id) {
                 product.remove();
             }
 
+            // cập nhật cart number
+            let cartNumber = document.getElementById('total-quantity');
+            if (cartNumber) {
+                cartNumber.innerText = data.total_quantity
+            }
+
             // cập nhật "Tổng tiền hàng" của đơn hàng
             let totalAmount = document.getElementById('total-amount');
 
@@ -103,8 +232,12 @@ function deleteCart(id) {
             if (data.total_quantity === 0) {
                 location.reload();
             }
+
+            localStorage.setItem('cart-quantity',data.total_quantity);
+            document.getElementById('total-quantity').innerText = data.total_quantity;
         });
-    }
+        }
+});
 }
 
 function applyVoucher() {
@@ -143,6 +276,7 @@ function applyVoucher() {
 function pay() {
     let select = document.getElementById('voucher-select');
     let voucherCode = select ? select.value : "";
+    console.error('vô được function pay');
 
     fetch('/api/pay', {
         method: 'POST',
@@ -155,6 +289,26 @@ function pay() {
     })
     .then(res => res.json())
     .then(data => {
-            window.location.href = '/order_history';
+        if (data.status === 200) {
+            Swal.fire({
+                title: "Thành công!",
+                text: data.message,
+                icon: "success",
+                showConfirmButton: false,
+                timer: 1000
+            })
+        }
+        else {
+            Swal.fire({
+                title: "Thất bại!",
+                text: data.message,
+                icon: "error"
+            })
+        }
+        console.error('vô được fetch api pay');
+        localStorage.removeItem('cart-quantity');
+        document.getElementById('total-quantity').innerText='';
+        window.location.href = '/order_history';
     });
 }
+

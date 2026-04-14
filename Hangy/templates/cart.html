@@ -58,7 +58,7 @@
                 <select class="form-select w-50" id="voucher-select" onchange="applyVoucher()">
                     <option value="" data-type="NONE" data-value="0">-- Không dùng --</option>
                     {%for v in list_vouchers%}
-                    <option value="{{v.code}}" data-type="{{v.discount_type}}" data-value="{{v.discount_value}}">{{v.code}}</option>
+                    <option value="{{v.voucher.code}}" data-type="{{v.voucher.discount_type.name}}" data-value="{{v.voucher.discount_value}}">{{v.voucher.code}}</option>
                     {%endfor%}
                 </select>
             </div>

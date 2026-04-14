@@ -14,20 +14,19 @@
         </div>
 
 
-        <form action="/register" enctype="multipart/form-data" method="post">
+        <form enctype="multipart/form-data" onsubmit="event.preventDefault(); registerProcess();" id="registerForm">
             <div class="text-center mb-4">
-                <img alt="Avatar Preview"
-                     class="rounded-circle border mb-3"
-                     id="avatarPreview" src="https://res.cloudinary.com/du9oap5y2/image/upload/v1764921187/user_icon_izjcfk.png"
-                     style="width: 100px; height: 100px; object-fit: cover; cursor: pointer;">
-                <br>
+                        <img id="avatarPreview"
+                             src="https://res.cloudinary.com/du9oap5y2/image/upload/v1764921187/user_icon_izjcfk.png"
+                             alt="Avatar Preview" class="rounded-circle border mb-3"
+                             style="width: 100px; height: 100px; object-fit: cover; cursor: pointer;">
+                        <br>
+                        <button type="button" id="upload_widget" class="btn btn-sm btn-outline-primary">
+                            <i class="fas fa-camera me-1"></i> Chọn ảnh đại diện
+                        </button>
+                        <input type="hidden" name="avatar" id="avatarInput">
+                    </div>
 
-            </div>
-
-            <div class="form-floating mb-3">
-                <span>Avatar: </span>
-                <input id="avatarInput" name="avatar" type="file">
-            </div>
 
             <div class="form-floating mb-3">
                 <input class="form-control" id="last_name" name="last_name" placeholder="Last name" required

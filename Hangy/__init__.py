@@ -1,7 +1,7 @@
-
 from flask import Flask
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
+
 app = Flask(__name__)
 
 # --- CẤU HÌNH CƠ BẢN ---
@@ -19,3 +19,5 @@ db = SQLAlchemy(app)
 from Hangy.routes.main import main_bp
 
 app.register_blueprint(main_bp)
+
+import Hangy.routes.admin

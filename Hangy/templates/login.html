@@ -19,7 +19,7 @@
             </div>
         {% endif %}
 
-        <form method="post" action="{{url_for('main_bp.login_process')}}">
+        <form onsubmit="event.preventDefault(); loginProcess();" id="loginForm">
             <div class="form-floating mb-3">
                 <input class="form-control" id="username" name="username" placeholder="Tên đăng nhập" required type="text">
                 <label for="username">Tên đăng nhập</label>
@@ -27,7 +27,7 @@
 
             <div class="form-floating mb-3">
                 <input class="form-control" id="password" name="password" placeholder="Mật khẩu" required type="password">
-                <label for="password">Last name</label>
+                <label for="password">Mật khẩu</label>
             </div>
 
 

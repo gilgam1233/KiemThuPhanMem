@@ -4,8 +4,8 @@
     <div class="card shadow-sm p-4">
         <div class="row">
             <div class="col-md-3 text-center border-right">
-                {% if current_user.profile.avatar %}
-                <img alt="Avatar" class="img-thumbnail rounded-circle mb-3" src="{{ current_user.profile.avatar }}"
+                {% if current_user.avatar %}
+                <img alt="Avatar" class="img-thumbnail rounded-circle mb-3" src="{{ current_user.avatar }}"
                      style="width: 150px; height: 150px; object-fit: cover;">
                 {% else %}
                 <img alt="Avatar"
@@ -14,7 +14,7 @@
                 {% endif %}
 
                 <h4 class="font-weight-bold mb-1">{{ current_user.username }}</h4>
-                <span class="badge badge-danger px-3 py-2 text-uppercase">{{ current_user.role }}</span>
+                <span class="badge badge-danger px-3 py-2 text-uppercase">{{ current_user.role.name}}</span>
 
             </div>
 
@@ -23,24 +23,24 @@
 
                 <table class="table table-borderless mt-3">
                     <tbody>
-                    {% if current_user.profile %}
+                    {% if current_user.is_authenticated %}
                     <tr>
                         <th style="width: 25%; color: #555;">Họ và tên:</th>
-                        <td class="font-weight-bold">{{ current_user.profile.first_name }} {{
-                            current_user.profile.last_name }}
+                        <td class="font-weight-bold">{{ current_user.first_name }} {{
+                            current_user.last_name }}
                         </td>
                     </tr>
                     <tr>
                         <th style="color: #555;">Email:</th>
-                        <td>{{ current_user.profile.email }}</td>
+                        <td>{{ current_user.email }}</td>
                     </tr>
                     <tr>
                         <th style="color: #555;">Số điện thoại:</th>
-                        <td>{{ current_user.profile.phone }}</td>
+                        <td>{{ current_user.phone }}</td>
                     </tr>
                     <tr>
                         <th style="color: #555;">Địa chỉ:</th>
-                        <td>{{ current_user.profile.address }}</td>
+                        <td>{{ current_user.address }}</td>
                     </tr>
                     {% else %}
                     <tr>
@@ -61,22 +61,22 @@
             <h5 class="text-muted border-bottom">Tiện ích</h5>
             <div class="d-flex gap extension">
                 <div>
-                    <a class="btn btn-primary" href="{{url_for('user.create_view')}}">Tạo người dùng mới</a>
+                    <a class="btn btn-primary" href="{{url_for('user.create_view')}}">Tạo người dùng</a>
                 </div>
                 <div>
-                    <a class="btn btn-info" href="{{url_for('profile.create_view')}}">Tạo hồ sơ mới</a>
+                    <a class="btn btn-danger" href="{{url_for('category.create_view')}}">Tạo danh mục</a>
                 </div>
                 <div>
-                    <a class="btn btn-secondary" href="{{url_for('product.create_view')}}">Tạo sản phẩm mới</a>
+                    <a class="btn btn-info" href="{{url_for('product.create_view')}}">Tạo sản phẩm</a>
                 </div>
                 <div>
-                    <a class="btn btn-warning" href="{{url_for('order.create_view')}}">Tạo đơn hàng mới</a>
+                    <a class="btn btn-warning" href="{{url_for('order.create_view')}}">Tạo đơn hàng</a>
                 </div>
                 <div>
-                    <a class="btn btn-dark" href="{{url_for('voucher.create_view')}}">Tạo mã giảm giá mới</a>
+                    <a class="btn btn-dark" href="{{url_for('voucher.create_view')}}">Tạo mã giảm giá</a>
                 </div>
                 <div>
-                    <a class="btn btn-success" href="{{url_for('uservoucher.create_view')}}">Tạo User-Voucher mới</a>
+                    <a class="btn btn-success" href="{{url_for('uservoucher.create_view')}}">Tạo User-Voucher</a>
                 </div>
             </div>
         </div>

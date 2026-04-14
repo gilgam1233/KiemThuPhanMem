@@ -111,6 +111,7 @@ body {
 
 .cart {
     border-radius: 1rem;
+    position: relative;
 }
 
 .cart a:hover {
@@ -130,6 +131,19 @@ body {
     color: limegreen;
     font-weight: bold;
     font-size: 18px;
+}
+
+.cart .cart-number {
+    padding: 0 0.2rem;
+    width: fit-content;
+    font-size: 10px;
+    background-color: orange;
+    border-radius: 10rem;
+    text-align: center;
+    align-content: center;
+    position: absolute;
+    top:0;
+    left: 50%;
 }
 
 .btn-login {
