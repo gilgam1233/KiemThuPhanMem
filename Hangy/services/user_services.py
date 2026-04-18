@@ -9,9 +9,13 @@ class UserService:
         return hashlib.md5(password.strip().encode("utf-8")).hexdigest()
 
     def get_user_by_id(self, uid: int) -> User | None:
+        if not uid or uid <= 0:
+            return None
         return User.query.get(uid)
-
     def authenticate(self, username: str, password: str) -> User | None:
+        if not username or not username.strip() or not password or not password.strip():
+            return None
+
         pw_hashed = self._hash_pw(password)
         return User.query.filter_by(username=username, password=pw_hashed).first()
 

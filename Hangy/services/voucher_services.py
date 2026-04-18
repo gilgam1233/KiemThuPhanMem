@@ -11,7 +11,7 @@ class VoucherService:
             if not user:
                 raise ValueError(f"Không tìm thấy người dùng với ID: {user_id}")
 
-            vouchers = UserVoucher.query.filter_by(user_id=user_id).all()
+            vouchers = UserVoucher.query.filter_by(user_id=user_id, is_used =0).all()
             return vouchers
 
         except ValueError as ve:
@@ -24,6 +24,15 @@ class VoucherService:
     def get_voucher_by_id(self, voucher_id: int) -> Voucher | None:
         try:
             voucher = Voucher.query.get(voucher_id)
+            if not voucher:
+                return None
+            return voucher
+        except Exception as ex:
+            print(f'Lỗi chung: {ex}')
+
+    def get_voucher_by_code_name(self, code_name: str) -> Voucher | None:
+        try:
+            voucher = Voucher.query.filter_by(code=code_name).first()
             if not voucher:
                 return None
             return voucher

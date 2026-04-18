@@ -6,7 +6,7 @@ from sqlalchemy.sql.functions import current_user
 from flask_login import login_user, logout_user, current_user, login_required
 
 from Hangy import PAGE_SIZE, login
-from Hangy.models import UserRoleEnum
+from Hangy.models import UserRoleEnum, OrderStatus
 from Hangy.services.user_services import user_service as user_services
 from Hangy.services.product_services import product_service as product_services
 from Hangy.services.voucher_services import voucher_service as voucher_services
@@ -41,7 +41,6 @@ def role_required(role):
     return decorator
 
 @main_bp.route("/")
-@role_required(UserRoleEnum.USER)
 def index():
     if current_user.is_authenticated and current_user.role == UserRoleEnum.ADMIN:
         return redirect(url_for('admin.index'))
@@ -268,9 +267,7 @@ def pay():
 
     data = request.json
     voucher_code = data.get('voucher_code')
-    voucher = voucher_services.get_voucher_by_id(voucher_code)
-
-    success = order_services.create_order(current_user.id, cart, voucher)
+    success = order_services.create_order(current_user.id, cart, voucher_code)
 
     if success:
         session.pop('cart', None)
@@ -278,7 +275,6 @@ def pay():
         return jsonify({'status': 200, 'message': 'Đặt hàng thành công!'})
     else:
         return jsonify({'status': 500, 'message': 'Có lỗi xảy ra khi tạo đơn hàng!'})
-
 
 # ==========================================
 # 5. LỊCH SỬ ĐƠN HÀNG

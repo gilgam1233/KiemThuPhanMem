@@ -8,7 +8,7 @@
 {%block content%}
 <form class="isearchbar d-flex" method="get" action="/">
     <div class="d-flex w-100">
-        <input name="kw" aria-label="Search" class="form-control me-2" placeholder="Nhập từ khóa cần tìm" type="search">
+        <input name="kw" aria-label="Search" class="form-control me-2" placeholder="Nhập từ khóa cần tìm" type="search" value="{{ request.args.get('kw', '') }}">
         <button class="btn btn-search" type="submit">Tìm</button>
     </div>
 </form>
@@ -55,7 +55,7 @@
     <ul class="pagination justify-content-center">
         {% for p in range(1, total_pages + 1) %}
         <li class="page-item {% if p == current_page %}active{% endif %}">
-            <a class="page-link" href="{{ url_for('main_bp.index', page=p) }}">{{ p }}</a>
+            <a class="page-link" href="{{ url_for('main_bp.index', page=p, kw=request.args.get('kw', '')) }}">{{ p }}</a>
         </li>
         {% endfor %}
     </ul>

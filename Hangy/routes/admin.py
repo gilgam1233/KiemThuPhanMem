@@ -1,19 +1,20 @@
 import typing as t
+from datetime import datetime
 
 from flask import request, redirect, url_for, flash
 from flask_admin import Admin, expose, AdminIndexView
-from flask_admin._compat import text_type
 from flask_admin._types import T_SQLALCHEMY_MODEL
 from flask_admin.babel import gettext
 from flask_admin.contrib.sqla import ModelView
 from flask_admin.theme import Bootstrap4Theme
 from flask_login import current_user
 from flask_admin.menu import MenuLink
-from wtforms import Form
+from wtforms import Form, DateTimeLocalField
 
 from Hangy import app, db
-from Hangy.models import User, Product, Order, Voucher, UserVoucher, Category, UserRoleEnum, OrderDetail
-from Hangy.services.validators import validate_voucher_rules
+from Hangy.models import User, Product, Order, Voucher, UserVoucher, Category, UserRoleEnum, OrderDetail, OrderStatus
+from Hangy.services.admin_services import validate_voucher_rules
+from Hangy.routes.main import order_services
 
 
 class MyAdminIndexView(AdminIndexView):
@@ -42,7 +43,7 @@ class MyModelView(ModelView):
         except Exception as ex:
             flash(
                 gettext("Xóa dữ liệu thất bại! Vui lòng xem lại ràng buộc bảng dữ liệu",
-                        message=text_type(ex)), "error",
+                        error=str(ex)), "error",
             )
             self.session.rollback()
             return False
@@ -64,7 +65,7 @@ class MyModelView(ModelView):
             return False
         except Exception as ex:
             flash(
-                gettext("Tạo dữ liệu thất bại! Vui lòng xem lại ràng buộc bảng dữ liệu", message=text_type(ex)), "error"
+                gettext("Tạo dữ liệu thất bại! Vui lòng xem lại ràng buộc bảng dữ liệu", error=str(ex)), "error"
             )
             self.session.rollback()
             return False
@@ -83,7 +84,7 @@ class MyModelView(ModelView):
             return False
         except Exception as ex:
             flash(
-                gettext("Failed to update record. %(error)s", error=str(ex)),
+                gettext("Cập nhật dữ liệu thất bại!", error=str(ex)),
                 "error",
             )
             self.session.rollback()
@@ -122,7 +123,6 @@ class ProductView(MyModelView):
         'category': 'Danh mục'
     }
 
-
 class OrderView(MyModelView):
     column_list = ['id', 'user', 'total_amount', 'final_amount', 'status', 'created_date']
     column_labels = {
@@ -133,6 +133,24 @@ class OrderView(MyModelView):
         'status': 'Trạng thái',
         'created_date': 'Ngày tạo'
     }
+
+    def on_model_delete(self, model):
+        try:
+            related_voucher = UserVoucher.query.filter_by(order_id=model.id).first()
+            if related_voucher:
+                related_voucher.is_used = 0
+                related_voucher.used_date = None
+                related_voucher.order_id = None
+
+            order = order_services.get_order_by_id(model.id)
+
+            if order.status == OrderStatus.PENDING or order.status == OrderStatus.CANCELED:
+                OrderDetail.query.filter_by(order_id=order.id).delete()
+            else:
+                raise Exception(f"Không thể xóa đơn hàng!!!")
+
+        except Exception as e:
+            raise Exception(f"Lỗi khi xử lý dữ liệu liên quan: {str(e)}")
 
 class OrderDetailView(MyModelView):
     column_list = ['created_date','quantity','price','product','order']
@@ -150,8 +168,38 @@ class VoucherView(MyModelView):
         'code': 'Mã giảm giá',
         'discount_type': 'Loại (Phần trăm/Số tiền)',
         'discount_value': 'Mức giảm',
-        'end_date': 'Ngày hết hạn'
+        'end_date': 'Ngày hết hạn',
+        'is_active':'Trạng thái',
+        'created_date':'Ngày khởi tạo'
     }
+
+    form_widget_args = {
+        'created_date': {'disabled': True}
+    }
+
+    form_overrides = {
+        'end_date': DateTimeLocalField
+    }
+
+    def create_form(self, obj=None):
+        form = super().create_form(obj)
+        if not form.end_date.render_kw:
+            form.end_date.render_kw = {}
+
+        # BỔ SUNG: Lệnh 'data-role': 'none' sẽ tắt lịch cũ của Flask-Admin
+        # Trình duyệt sẽ tự động hiển thị bộ lịch HTML5 hiện đại của riêng nó
+        form.end_date.render_kw['data-role'] = 'none'
+        form.end_date.render_kw['min'] = datetime.now().strftime('%Y-%m-%dT%H:%M')
+        return form
+
+    def edit_form(self, obj=None):
+        form = super().edit_form(obj)
+        if not form.end_date.render_kw:
+            form.end_date.render_kw = {}
+
+        form.end_date.render_kw['data-role'] = 'none'
+        form.end_date.render_kw['min'] = datetime.now().strftime('%Y-%m-%dT%H:%M')
+        return form
 
     def on_model_change(self, form, model, is_created):
         validate_voucher_rules(model.discount_type, model.discount_value, model.end_date)
@@ -169,6 +217,7 @@ class UserVoucherView(MyModelView):
     }
 
 
+
 admin = Admin(
     app=app,
     theme=Bootstrap4Theme(),
@@ -176,7 +225,6 @@ admin = Admin(
     name='HANGY ADMIN',
 )
 
-# Đăng ký các View với Model tương ứng
 admin.add_view(UserView(User, db.session, name='Người dùng'))
 admin.add_view(CategoryView(Category, db.session, name='Danh mục'))
 admin.add_view(ProductView(Product, db.session, name='Sản phẩm'))

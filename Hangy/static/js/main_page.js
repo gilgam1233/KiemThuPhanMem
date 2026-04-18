@@ -58,13 +58,7 @@ function loginProcess() {
         body: new FormData(document.getElementById('loginForm'))
     }).then(res => res.json()).then(data => {
         if (data.status==='success') {
-            Swal.fire({
-                title: "Thành công",
-                icon: "success",
-                showConfirmButton: false,
-                timer: 1000
-            }).then(() =>
-                window.location.href=data.next)
+            window.location.href=data.next;
         }
         else {
             Swal.fire({
@@ -276,7 +270,6 @@ function applyVoucher() {
 function pay() {
     let select = document.getElementById('voucher-select');
     let voucherCode = select ? select.value : "";
-    console.error('vô được function pay');
 
     fetch('/api/pay', {
         method: 'POST',
@@ -305,7 +298,6 @@ function pay() {
                 icon: "error"
             })
         }
-        console.error('vô được fetch api pay');
         localStorage.removeItem('cart-quantity');
         document.getElementById('total-quantity').innerText='';
         window.location.href = '/order_history';
