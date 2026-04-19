@@ -12,29 +12,6 @@ class OrderService:
     def get_order_by_id(self, id: int) -> Order:
         return Order.query.filter_by(id=id).first()
 
-
-    def payment(self,order:Order):
-        try:
-            order.status = OrderStatus.COMPLETED
-
-            user_voucher = UserVoucher.query.filter_by(order_id=order.id).first()
-            if user_voucher:
-                user_voucher.is_used = True
-                user_voucher.used_date = datetime.now()
-
-            db.session.commit()
-
-            return jsonify({
-                "status": "success",
-                "message": "Thanh toán giả lập thành công!",
-                "order_id": order.id,
-                "final_amount": order.final_amount
-            }), 200
-
-        except Exception as e:
-            db.session.rollback()
-            return jsonify({"status": "error", "message": f"Lỗi hệ thống: {str(e)}"}), 500
-
     def create_order(self, user_id, cart_items, voucher_code=None) -> bool:
         try:
             voucher = voucher_services.get_voucher_by_code_name(voucher_code)
@@ -43,6 +20,7 @@ class OrderService:
             final_amount = total_amount
             user_voucher_to_update = None
             if voucher:
+
                 v_info = (UserVoucher.query
                           .join(Voucher, UserVoucher.voucher_id == Voucher.id)
                           .filter(
@@ -51,6 +29,10 @@ class OrderService:
                     UserVoucher.is_used == 0,
                     Voucher.is_active == 1
                 ).first())
+
+                if v_info is None:
+                    return False
+
                 if v_info:
                     user_voucher_to_update = v_info
 
