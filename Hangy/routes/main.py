@@ -120,8 +120,11 @@ def register_process():
         last_name = request.form.get("last_name")
 
         if password != confirm:
-            flash("Mật khẩu không khớp!", "danger")
-            return render_template("register.html")
+            return jsonify({
+                'status': 'error',
+                'message': 'Mật khẩu không khớp!',
+                'status_code':400
+            })
 
         extra_info = {
             "phone": request.form.get("phone"),
@@ -129,17 +132,19 @@ def register_process():
             "avatar": request.form.get("avatar"),
         }
 
-        if user_services.create_user(
+        flag_created,msg = user_services.create_user(
             username=username,
             password=password,
             email=email,
             first_name=first_name,
             last_name=last_name,
             **extra_info
-        ):
+        )
+
+        if flag_created:
             return {"status": "success", "message": "Đăng ký thành công!"}, 200
         else:
-            return {"status": "error", "message": "Username đã tồn tại!"}, 400
+            return {"status": "error", "message": msg}, 400
 
     return render_template("register.html")
 

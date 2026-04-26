@@ -1,4 +1,6 @@
 import hashlib
+from typing import Dict
+
 from Hangy import db
 from Hangy.models import User
 from sqlalchemy.exc import IntegrityError
@@ -27,13 +29,13 @@ class UserService:
         first_name: str,
         email: str,
         **kwargs,
-    ) -> bool:
+    ) -> Dict[bool,str]:
         try:
             if User.query.filter_by(username=username).first():
-                raise ValueError("Username đã tồn tại!")
+                return [False,"Username đã tồn tại!"]
 
             if User.query.filter_by(email=email).first():
-                raise ValueError("Email đã được sử dụng!")
+                return [False,"Email đã được sử dụng!"]
 
             full_name = f"{last_name} {first_name}".strip()
 
@@ -55,15 +57,10 @@ class UserService:
             db.session.commit()
             return True
 
-        except IntegrityError as ex:
-            db.session.rollback()
-            print(f"Lỗi Integrity: {ex}")
-            return False
-
         except Exception as e:
             db.session.rollback()
             print(f"Lỗi chung: {e}")
-            return False
+            return [False,"Hệ thống gặp lỗi"]
 
 
 user_service = UserService()
