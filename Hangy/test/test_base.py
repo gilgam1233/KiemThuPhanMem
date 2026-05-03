@@ -1,5 +1,6 @@
 import pytest
 from flask import Flask
+from selenium import webdriver
 
 from Hangy import db
 
@@ -25,3 +26,10 @@ def test_app():
 def test_session(test_app):
     yield db.session
     db.session.rollback()
+
+@pytest.fixture
+def driver():
+    driver = webdriver.Chrome()
+    driver.maximize_window()
+    yield driver
+    driver.quit()
