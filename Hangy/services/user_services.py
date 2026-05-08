@@ -1,4 +1,12 @@
 import hashlib
+<<<<<<< Updated upstream
+=======
+import re
+from typing import Dict
+
+from docutils.nodes import address
+
+>>>>>>> Stashed changes
 from Hangy import db
 from Hangy.models import User
 from sqlalchemy.exc import IntegrityError
@@ -35,7 +43,20 @@ class UserService:
             if User.query.filter_by(email=email).first():
                 raise ValueError("Email đã được sử dụng!")
 
+            if re.match(r"^[a-zA-Z]+$", kwargs.get("phone")):
+                return [False,'Số điện thoại chứa ký tự chữ hoặc đặt biệt!']
+
+            if len(username) > 30 or len(password) > 255 or len(first_name) > 30 or len(last_name) > 30 or len(email) > 50 or len(kwargs.get("phone")) > 15 or len(kwargs.get('address')) > 255:
+                return [False,'Nhập quá ký tự cho phép!']
+
             full_name = f"{last_name} {first_name}".strip()
+            username = username.strip()
+            last_name = last_name.strip()
+
+            avt = kwargs.get("avatar")
+
+            if not avt:
+                avt =  f"https://ui-avatars.com/api/?name={full_name}&background=0D8ABC&color=fff&size=128"
 
             new_user = User(
                 username=username,
@@ -45,15 +66,12 @@ class UserService:
                 email=email,
                 phone=kwargs.get("phone"),
                 address=kwargs.get("address"),
-                avatar=kwargs.get(
-                    "avatar",
-                    f"https://ui-avatars.com/api/?name={full_name}&background=0D8ABC&color=fff&size=128",  # Trường avatar sẽ cần được bọc trong 1 phương thức đưa lên cloudinary rồi trả về link: str
-                ),
+                avatar=avt,
             )
 
             db.session.add(new_user)
             db.session.commit()
-            return True
+            return [True,"Tạo tài khoản thành công"]
 
         except IntegrityError as ex:
             db.session.rollback()

@@ -95,10 +95,11 @@ class Voucher(BaseModel):
 
     @validates("discount_value")
     def validate_discount(self, key, value):
-        if value < 0:
+        if value <= 0:
             raise ValueError("Giá trị giảm giá không hợp lệ!")
         if self.discount_type == DiscountEnum.PERCENT and value > 50:
             raise ValueError("Giảm giá phần trăm không được quá 50%!")
+
         return value
 
     def __str__(self):

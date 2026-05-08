@@ -164,6 +164,7 @@ class OrderDetailView(MyModelView):
 
 
 class VoucherView(MyModelView):
+
     column_labels = {
         'code': 'Mã giảm giá',
         'discount_type': 'Loại (Phần trăm/Số tiền)',
@@ -172,6 +173,12 @@ class VoucherView(MyModelView):
         'is_active':'Trạng thái',
         'created_date':'Ngày khởi tạo'
     }
+
+    form_columns = [
+        'code', 'discount_type', 'discount_value',
+        'end_date', 'is_active',
+        'created_date'
+    ]
 
     form_widget_args = {
         'created_date': {'disabled': True}
@@ -186,8 +193,6 @@ class VoucherView(MyModelView):
         if not form.end_date.render_kw:
             form.end_date.render_kw = {}
 
-        # BỔ SUNG: Lệnh 'data-role': 'none' sẽ tắt lịch cũ của Flask-Admin
-        # Trình duyệt sẽ tự động hiển thị bộ lịch HTML5 hiện đại của riêng nó
         form.end_date.render_kw['data-role'] = 'none'
         form.end_date.render_kw['min'] = datetime.now().strftime('%Y-%m-%dT%H:%M')
         return form

@@ -37,6 +37,10 @@ class OrderService:
 
     def create_order(self, user_id, cart_items, voucher_code=None) -> bool:
         try:
+            for item in cart_items.values():
+                if item['quantity'] >= 99:
+                    item['quantity'] = 99
+
             voucher = voucher_services.get_voucher_by_code_name(voucher_code)
             total_amount = sum(item['quantity'] * item['price'] for item in cart_items.values())
 
