@@ -221,6 +221,10 @@ class UserVoucherView(MyModelView):
         'used_date': 'Ngày dùng'
     }
 
+    form_widget_args = {
+        'created_date': {'disabled': True},
+        'used_date': {'disabled': True}
+    }
 
 
 admin = Admin(

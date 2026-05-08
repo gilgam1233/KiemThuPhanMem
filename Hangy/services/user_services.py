@@ -1,12 +1,9 @@
 import hashlib
-<<<<<<< Updated upstream
-=======
 import re
 from typing import Dict
 
 from docutils.nodes import address
 
->>>>>>> Stashed changes
 from Hangy import db
 from Hangy.models import User
 from sqlalchemy.exc import IntegrityError
@@ -35,13 +32,13 @@ class UserService:
         first_name: str,
         email: str,
         **kwargs,
-    ) -> bool:
+    ) -> Dict[bool,str]:
         try:
             if User.query.filter_by(username=username).first():
-                raise ValueError("Username đã tồn tại!")
+                return [False,"Username đã tồn tại!"]
 
             if User.query.filter_by(email=email).first():
-                raise ValueError("Email đã được sử dụng!")
+                return [False,"Email đã được sử dụng!"]
 
             if re.match(r"^[a-zA-Z]+$", kwargs.get("phone")):
                 return [False,'Số điện thoại chứa ký tự chữ hoặc đặt biệt!']
@@ -73,15 +70,10 @@ class UserService:
             db.session.commit()
             return [True,"Tạo tài khoản thành công"]
 
-        except IntegrityError as ex:
-            db.session.rollback()
-            print(f"Lỗi Integrity: {ex}")
-            return False
-
         except Exception as e:
             db.session.rollback()
             print(f"Lỗi chung: {e}")
-            return False
+            return [False,"Hệ thống gặp lỗi"]
 
 
 user_service = UserService()
