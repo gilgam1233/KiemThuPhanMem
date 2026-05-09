@@ -1,5 +1,5 @@
 from Hangy import db, app
-from Hangy.models import User, UserVoucher, Voucher, Order
+from Hangy.models import User, UserVoucher, Voucher, Order, Category, Product
 
 
 def get_user_by_username(username):
@@ -10,6 +10,18 @@ def get_user_by_email(email):
     data = User.query.filter_by(email=email).first()
     return data
 
+def get_category_by_name(name):
+    data = Category.query.filter_by(name=name).first()
+    return data
+
+def get_product_by_name(name):
+    data = Product.query.filter_by(name=name).first()
+    return data
+
+def get_voucher_by_code(code):
+    data = Voucher.query.filter_by(code=code).first()
+    return data
+
 def delete_user_by_email(email):
     data = User.query.filter_by(email=email).first()
     db.session.delete(data)
@@ -18,6 +30,21 @@ def delete_user_by_email(email):
 
 def delete_user_by_username(username):
     data = User.query.filter_by(username=username).first()
+    db.session.delete(data)
+    db.session.commit()
+
+def delete_category_by_name(name):
+    data = Category.query.filter_by(name=name).first()
+    db.session.delete(data)
+    db.session.commit()
+
+def delete_voucher_by_code(code):
+    data = Voucher.query.filter_by(code=code).first()
+    db.session.delete(data)
+    db.session.commit()
+
+def delete_product_by_name(name):
+    data = Product.query.filter_by(name=name).first()
     db.session.delete(data)
     db.session.commit()
 
@@ -43,4 +70,4 @@ def get_order_by_id(user_id):
     return data
 
 with app.app_context():
-    print(get_order_by_id(2))
+    print(get_user_by_username('admin'))

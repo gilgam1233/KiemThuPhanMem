@@ -55,7 +55,7 @@ class UserService:
 
             db.session.add(new_user)
             db.session.commit()
-            return True
+            return [True, "Đăng ký thành công!"]
 
         except Exception as e:
             db.session.rollback()

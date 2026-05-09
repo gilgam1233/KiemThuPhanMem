@@ -12,7 +12,7 @@ from Hangy.test.pages.HomePage import HomePage
 from Hangy.test.pages.LoginPage import LoginPage
 from Hangy.test.pages.OrderHistoryPage import OrderHistoryPage
 from Hangy.test.pages.RegisterPage import RegisterPage
-from Hangy.test.test_base import driver, test_app
+from Hangy.test.test_base import driver
 
 def login_as(driver):
     login = LoginPage(driver)

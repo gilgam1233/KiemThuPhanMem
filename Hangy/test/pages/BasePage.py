@@ -18,3 +18,9 @@ class BasePage:
         e = self.find(by, value)
         e.clear()
         e.send_keys(text)
+
+    def accept_browser_alert(self):
+        self.driver.switch_to.alert.accept()
+
+    def dismiss_browser_alert(self):
+        self.driver.switch_to.alert.dismiss()

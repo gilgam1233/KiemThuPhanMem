@@ -34,6 +34,10 @@ class MyAdminIndexView(AdminIndexView):
 class MyModelView(ModelView):
     column_display_pk = True
 
+    form_widget_args = {
+        'created_date': {'disabled': True}
+    }
+
     def delete_model(self, model) -> bool:
         try:
             self.on_model_delete(model)
@@ -153,6 +157,8 @@ class OrderView(MyModelView):
             raise Exception(f"Lỗi khi xử lý dữ liệu liên quan: {str(e)}")
 
 class OrderDetailView(MyModelView):
+    can_create = False
+
     column_list = ['created_date','quantity','price','product','order']
     column_labels = {
         'created_date': 'Ngày tạo',
