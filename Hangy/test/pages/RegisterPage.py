@@ -25,7 +25,7 @@ class RegisterPage(BasePage):
 
     def register(self, username, password, confirm_password,first_name,last_name,email,phone):
         self.typing(*self.USERNAME, username + Keys.ENTER)
-        time.sleep(1)
+        time.sleep(2)
         self.typing(*self.PASSWORD, password + Keys.ENTER)
         self.typing(*self.CONFIRM_PASSWORD, confirm_password + Keys.ENTER)
         self.typing(*self.FIRST_NAME, first_name + Keys.ENTER)

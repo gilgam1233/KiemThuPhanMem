@@ -31,7 +31,7 @@ class CartPage(BasePage):
     ALERT_DELETE_CONFIRM = By.CLASS_NAME, 'swal2-confirm'
     ALERT_DELETE_CANCEL = By.CLASS_NAME, 'swal2-cancel'
 
-    ALERT_EMPTY_CART = By.CLASS_NAME, 'alert'
+    ALERT = By.CLASS_NAME, 'alert'
 
     def open_page(self):
         self.open(self.URL)
@@ -62,16 +62,19 @@ class CartPage(BasePage):
         return self.find(*self.AMOUNT_PRODUCT)
 
     def get_total_amount(self):
-        return self.find(*self.TOTAL_AMOUNT)
+        text = self.find(*self.TOTAL_AMOUNT).text
+        return float(text.replace(',','').replace(' ₫',''))
 
     def get_voucher_discount(self):
-        return self.find(*self.VOUCHER_DISCOUNT)
+        text = self.find(*self.VOUCHER_DISCOUNT).text
+        return float(text.replace(',', '').replace(' ₫', ''))
 
     def get_final_amount(self):
-        return self.find(*self.FINAL_AMOUNT)
+        text = self.find(*self.FINAL_AMOUNT).text
+        return float(text.replace(',', '').replace(' ₫', ''))
 
-    def get_alert_empty_cart(self):
-        return self.find(*self.ALERT_EMPTY_CART)
+    def get_alert(self):
+        return self.find(*self.ALERT)
 
     def get_voucher_select(self):
         return self.find(*self.VOUCHER_SELECT)
