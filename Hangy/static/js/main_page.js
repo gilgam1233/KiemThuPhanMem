@@ -50,12 +50,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         uploadBtn.addEventListener("click", function(){ myWidget.open(); }, false);
     }
-
-    const phoneInput = document.getElementById('phone');
-
-    phoneInput.addEventListener('input', function (e) {
-        this.value = this.value.replace(/[^0-9]/g, '');
-    });
 });
 
 function loginProcess() {

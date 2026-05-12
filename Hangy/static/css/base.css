@@ -143,6 +143,7 @@ body {
     align-content: center;
     position: absolute;
     top:0;
+    left: 50%;
 }
 
 .btn-login {

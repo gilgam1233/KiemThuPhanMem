@@ -93,3 +93,6 @@ class CartPage(BasePage):
 
     def pay(self):
         self.find(*self.PAY_BUTTON).click()
+
+    def get_alert_empty_cart(self):
+        return self.driver.find_element(By.CSS_SELECTOR, ".alert-warning")

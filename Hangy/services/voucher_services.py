@@ -1,5 +1,7 @@
+from datetime import datetime
 from typing import List
-from Hangy.models import Voucher, UserVoucher, User
+from Hangy.models import Voucher, UserVoucher, User, DiscountEnum
+
 
 class VoucherService:
     def load_vouchers(self, user_id: int) -> List[Voucher] | None:
@@ -11,7 +13,9 @@ class VoucherService:
             if not user:
                 raise ValueError(f"Không tìm thấy người dùng với ID: {user_id}")
 
-            vouchers = UserVoucher.query.filter_by(user_id=user_id, is_used =0).all()
+            vouchers = UserVoucher.query.join(Voucher).filter(UserVoucher.user_id==user_id, UserVoucher.is_used ==0,
+                                                              UserVoucher.voucher_id== Voucher.id,
+                                                              Voucher.end_date>=datetime.now()).all()
             return vouchers
 
         except ValueError as ve:
@@ -38,5 +42,42 @@ class VoucherService:
             return voucher
         except Exception as ex:
             print(f'Lỗi chung: {ex}')
+
+    def validate_voucher_rules(self,discount_type, discount_value, end_date=None):
+
+        if discount_value:
+            try:
+                val = float(discount_value)
+            except ValueError:
+                raise ValueError("Lỗi: Định dạng giá trị giảm không đúng (chứa ký tự chữ hoặc ký hiệu lạ)")
+
+        if isinstance(end_date, str):
+            try:
+                datetime.strptime(end_date, '%Y-%m-%d %H:%M:%S')
+            except ValueError:
+                raise ValueError("Lỗi: Định dạng ngày tháng không đúng")
+
+        if isinstance(discount_type, str):
+            try:
+                discount_type = DiscountEnum[discount_type.upper()]
+
+            except KeyError:
+                raise ValueError("Lỗi: Enum không tồn tại giá trị")
+
+        if discount_value <= 0:
+            raise ValueError("Lỗi: Giá trị giảm giá không được là số âm!")
+
+        is_percent = discount_type == DiscountEnum.PERCENT or str(discount_type) == 'PERCENT' or str(
+            discount_type) == 'DiscountEnum.PERCENT'
+
+        if is_percent and discount_value > 50:
+            raise ValueError("Lỗi: Mức giảm giá phần trăm không được vượt quá 50%!")
+
+        if end_date:
+            if end_date.date() < datetime.now().date():
+                raise ValueError("Lỗi: Thời gian hiệu lực phải lớn hơn hoặc bằng ngày hiện tại!")
+
+        return True
+
 
 voucher_service = VoucherService()

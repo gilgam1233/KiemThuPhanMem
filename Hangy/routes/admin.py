@@ -13,8 +13,7 @@ from wtforms import Form, DateTimeLocalField
 
 from Hangy import app, db
 from Hangy.models import User, Product, Order, Voucher, UserVoucher, Category, UserRoleEnum, OrderDetail, OrderStatus
-from Hangy.services.admin_services import validate_voucher_rules
-from Hangy.routes.main import order_services
+from Hangy.routes.main import order_services, voucher_services
 
 
 class MyAdminIndexView(AdminIndexView):
@@ -33,10 +32,6 @@ class MyAdminIndexView(AdminIndexView):
 
 class MyModelView(ModelView):
     column_display_pk = True
-
-    form_widget_args = {
-        'created_date': {'disabled': True}
-    }
 
     def delete_model(self, model) -> bool:
         try:
@@ -140,25 +135,25 @@ class OrderView(MyModelView):
 
     def on_model_delete(self, model):
         try:
+
+            order = order_services.get_order_by_id(model.id)
+
+            if order.status not in [OrderStatus.PENDING, OrderStatus.CANCELED]:
+                raise Exception(f"Không thể xóa đơn hàng!!!")
+
             related_voucher = UserVoucher.query.filter_by(order_id=model.id).first()
             if related_voucher:
                 related_voucher.is_used = 0
                 related_voucher.used_date = None
                 related_voucher.order_id = None
 
-            order = order_services.get_order_by_id(model.id)
 
-            if order.status == OrderStatus.PENDING or order.status == OrderStatus.CANCELED:
-                OrderDetail.query.filter_by(order_id=order.id).delete()
-            else:
-                raise Exception(f"Không thể xóa đơn hàng!!!")
+            OrderDetail.query.filter_by(order_id=order.id).delete()
 
         except Exception as e:
             raise Exception(f"Lỗi khi xử lý dữ liệu liên quan: {str(e)}")
 
 class OrderDetailView(MyModelView):
-    can_create = False
-
     column_list = ['created_date','quantity','price','product','order']
     column_labels = {
         'created_date': 'Ngày tạo',
@@ -170,6 +165,7 @@ class OrderDetailView(MyModelView):
 
 
 class VoucherView(MyModelView):
+
     column_labels = {
         'code': 'Mã giảm giá',
         'discount_type': 'Loại (Phần trăm/Số tiền)',
@@ -178,6 +174,12 @@ class VoucherView(MyModelView):
         'is_active':'Trạng thái',
         'created_date':'Ngày khởi tạo'
     }
+
+    form_columns = [
+        'code', 'discount_type', 'discount_value',
+        'end_date', 'is_active',
+        'created_date'
+    ]
 
     form_widget_args = {
         'created_date': {'disabled': True}
@@ -192,8 +194,6 @@ class VoucherView(MyModelView):
         if not form.end_date.render_kw:
             form.end_date.render_kw = {}
 
-        # BỔ SUNG: Lệnh 'data-role': 'none' sẽ tắt lịch cũ của Flask-Admin
-        # Trình duyệt sẽ tự động hiển thị bộ lịch HTML5 hiện đại của riêng nó
         form.end_date.render_kw['data-role'] = 'none'
         form.end_date.render_kw['min'] = datetime.now().strftime('%Y-%m-%dT%H:%M')
         return form
@@ -208,7 +208,7 @@ class VoucherView(MyModelView):
         return form
 
     def on_model_change(self, form, model, is_created):
-        validate_voucher_rules(model.discount_type, model.discount_value, model.end_date)
+        voucher_services.validate_voucher_rules(model.discount_type, model.discount_value, model.end_date)
 
         super().on_model_change(form, model, is_created)
 
@@ -222,6 +222,10 @@ class UserVoucherView(MyModelView):
         'used_date': 'Ngày dùng'
     }
 
+    form_widget_args = {
+        'created_date': {'disabled': True},
+        'used_date': {'disabled': True}
+    }
 
 
 admin = Admin(

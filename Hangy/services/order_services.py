@@ -12,8 +12,15 @@ class OrderService:
     def get_order_by_id(self, id: int) -> Order:
         return Order.query.filter_by(id=id).first()
 
+    def get_order_by_user_id(self,id:int) -> Order:
+        return Order.query.filter_by(user_id=id).order_by(Order.id.desc()).first()
+
     def create_order(self, user_id, cart_items, voucher_code=None) -> bool:
         try:
+            for item in cart_items.values():
+                if item['quantity'] >= 99:
+                    item['quantity'] = 99
+
             voucher = voucher_services.get_voucher_by_code_name(voucher_code)
             total_amount = sum(item['quantity'] * item['price'] for item in cart_items.values())
 
@@ -27,7 +34,8 @@ class OrderService:
                     Voucher.code == voucher.code,
                     UserVoucher.user_id == user_id,
                     UserVoucher.is_used == 0,
-                    Voucher.is_active == 1
+                    Voucher.is_active == 1,
+                    Voucher.end_date >= datetime.now()
                 ).first())
 
                 if v_info is None:

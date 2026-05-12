@@ -1,5 +1,3 @@
-from datetime import timedelta, datetime
-
 from Hangy import db, app
 from Hangy.models import User, UserVoucher, Voucher, Order, Category, Product
 
@@ -70,7 +68,6 @@ def get_order_by_id(user_id):
     data = [str(r.created_date) for r in result]
 
     return data
-
 
 with app.app_context():
     print(get_user_by_username('admin'))

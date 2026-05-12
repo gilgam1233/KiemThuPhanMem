@@ -1,14 +1,25 @@
 import pytest
 from flask import Flask
+from flask_admin import Admin
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 
 from Hangy import db
+from Hangy.models import Voucher
+from Hangy.routes.admin import VoucherView
+
 
 def create_app():
     app=Flask(__name__)
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///:memory:"
     app.config["PAGE_SIZE"]=30
+    app.config['WTF_CSRF_ENABLED'] = False
+    app.config['SECRET_KEY'] = 'testsecret'
+
     db.init_app(app)
+
+    admin = Admin(app, name='Hangy Admin')
+    admin.add_view(VoucherView(Voucher, db.session))
 
     return app
 
