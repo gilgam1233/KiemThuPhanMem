@@ -15,7 +15,7 @@ class AdminVoucherPage(BasePage):
 
     DATA_CODE = By.ID, 'code'
     DATA_DISCOUNT_TYPE_SELECT = By.CSS_SELECTOR, '#s2id_discount_type .select2-chosen'
-    DATA_DISCOUNT_TYPE_INPUT = By.ID, 's2id_autogen2_search'
+    DATA_DISCOUNT_TYPE_INPUT = By.CSS_SELECTOR, '.select2-search .select2-input'
     DATA_DISCOUNT_VALUE = By.ID, 'discount_value'
     DATA_END_DATE = By.ID, 'end_date'
 

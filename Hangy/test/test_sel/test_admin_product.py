@@ -31,8 +31,8 @@ def test_admin_product_create_new_product_success(driver):
     time.sleep(2)
 
     with app.app_context():
-        user = get_product_by_name(name)
-        if user: delete_product_by_name(name)
+        prod = get_product_by_name(name)
+        if prod: delete_product_by_name(name)
 
     alert = admin.alert().text
     assert 'success' in alert
@@ -61,8 +61,8 @@ def test_admin_product_edit_name_success(driver):
     time.sleep(1)
 
     with app.app_context():
-        user = get_product_by_name('test')
-        if user: delete_product_by_name('test')
+        prod = get_product_by_name('test')
+        if prod: delete_product_by_name('test')
 
     alert = admin.alert().text
     assert 'success' in alert

@@ -25,8 +25,8 @@ def test_register_success(driver):
         unique_username,
         '1',
         '1',
-        'Vy',
-        'Tran',
+        'Ten',
+        'Ho',
         unique_email,
         '0123456789'
     )
@@ -50,8 +50,8 @@ def test_register_failed_missing_required_fields(driver):
         '',
         '1',
         '1',
-        'Vy',
-        'Tran',
+        'Ten',
+        'Ho',
         unique_email,
         '0123456789'
     )
@@ -75,8 +75,8 @@ def test_register_failed_username_exists(driver):
         'admin',
         '1',
         '1',
-        'Vy',
-        'Tran',
+        'Ten',
+        'Ho',
         unique_email,
         '0123456789'
     )
@@ -104,8 +104,8 @@ def test_register_failed_password_missmatch(driver):
         unique_username,
         '1',
         '2',
-        'Vy',
-        'Tran',
+        'Ten',
+        'Ho',
         unique_email,
         '0123456789'
     )
@@ -132,8 +132,8 @@ def test_register_failed_email_exists(driver):
         unique_username,
         '1',
         '1',
-        'Vy',
-        'Tran',
+        'Ten',
+        'Ho',
         'admin@hangy.vn',
         '0123456789'
     )
@@ -161,8 +161,8 @@ def test_register_failed_invalid_email(driver):
         unique_username,
         '1',
         '1',
-        'Vy',
-        'Tran',
+        'Ten',
+        'Ho',
         unique_email,
         '0123456789'
     )
@@ -187,8 +187,8 @@ def test_register_failed_invalid_phone(driver):
         unique_username,
         '1',
         '1',
-        'Vy',
-        'Tran',
+        'Ten',
+        'Ho',
         unique_email,
         'abc'
     )
@@ -214,7 +214,7 @@ def test_register_failed_whitespaces_fields(driver):
         '1',
         '1',
         '   ',
-        'Tran',
+        'Ho',
         unique_email,
         '0123456789'
     )

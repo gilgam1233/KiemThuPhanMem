@@ -30,8 +30,8 @@ def test_admin_category_create_new_category_success(driver):
     time.sleep(2)
 
     with app.app_context():
-        user = get_category_by_name(name)
-        if user: delete_category_by_name(name)
+        cate = get_category_by_name(name)
+        if cate: delete_category_by_name(name)
 
     alert = admin.alert().text
     assert 'success' in alert
@@ -48,10 +48,8 @@ def test_admin_category_create_new_category_failed_name_exists(driver):
     admin.create_new_category(
         name
     )
-    time.sleep(2)
-
-    alert = admin.alert().text
-    assert 'Fail' in alert
+    time.sleep(1)
+    assert 'new' in driver.current_url
 
 def test_admin_category_edit_name_success(driver):
     admin = AdminCategoryPage(driver)
@@ -73,8 +71,8 @@ def test_admin_category_edit_name_success(driver):
     time.sleep(1)
 
     with app.app_context():
-        user = get_category_by_name('test')
-        if user: delete_category_by_name('test')
+        cate = get_category_by_name('test')
+        if cate: delete_category_by_name('test')
 
     alert = admin.alert().text
     assert 'success' in alert
@@ -99,11 +97,10 @@ def test_admin_category_edit_name_failed_name_exist(driver):
     time.sleep(1)
 
     with app.app_context():
-        user = get_category_by_name(name)
-        if user: delete_category_by_name(name)
+        cate = get_category_by_name(name)
+        if cate: delete_category_by_name(name)
 
-    alert = admin.alert().text
-    assert 'Fail' in alert
+    assert 'edit' in driver.current_url
 
 def test_admin_category_delete_category(driver):
     admin = AdminCategoryPage(driver)

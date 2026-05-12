@@ -20,6 +20,27 @@ def login_as(driver):
     login.open_page()
     login.login('user_0', '123')
 
+def test_click_cart_without_login(driver):
+    home = HomePage(driver)
+
+    home.open_page()
+    home.go_to_cart()
+
+    current_url = driver.current_url
+    assert "login" in current_url
+
+def test_click_cart_with_login(driver):
+    home = HomePage(driver)
+
+    login_as(driver)
+
+    time.sleep(1)
+
+    home.go_to_cart()
+
+    current_url = driver.current_url
+    assert "cart" in current_url
+
 def test_cart_add_to_cart_with_login(driver):
     home = HomePage(driver)
     cart = CartPage(driver)

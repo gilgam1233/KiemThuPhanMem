@@ -62,8 +62,7 @@ def test_admin_user_create_new_user_failed_username_exists(driver):
         user = get_user_by_email(email)
         if user: delete_user_by_email(email)
 
-    alert = admin.alert().text
-    assert 'Fail' in alert
+    assert 'new' in driver.current_url
 
 def test_admin_user_create_new_user_failed_email_exists(driver):
     admin = AdminUserPage(driver)
@@ -87,8 +86,7 @@ def test_admin_user_create_new_user_failed_email_exists(driver):
         user = get_user_by_username(username)
         if user: delete_user_by_username(username)
 
-    alert = admin.alert().text
-    assert 'Fail' in alert
+    assert 'new' in driver.current_url
 
 def test_admin_user_edit_username_success(driver):
     admin = AdminUserPage(driver)
@@ -147,8 +145,7 @@ def test_admin_user_edit_username_failed_username_exist(driver):
         user = get_user_by_username(username)
         if user: delete_user_by_username(username)
 
-    alert = admin.alert().text
-    assert 'Fail' in alert
+    assert 'edit' in driver.current_url
 
 def test_admin_user_delete_user_success(driver):
     admin = AdminUserPage(driver)

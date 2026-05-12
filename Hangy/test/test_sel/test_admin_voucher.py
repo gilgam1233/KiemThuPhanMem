@@ -148,6 +148,11 @@ def test_admin_voucher_create_new_voucher_failed_code_exists(driver):
     )
     time.sleep(2)
 
+    with app.app_context():
+        voucher = get_voucher_by_code(code)
+        if voucher:
+            delete_voucher_by_code(code)
+
     assert 'new' in driver.current_url
 
 def test_admin_voucher_create_new_voucher_failed_discount_negative_value(driver):
@@ -242,6 +247,32 @@ def test_admin_voucher_edit_discount_value_failed(driver):
             delete_voucher_by_code(code)
 
 def test_admin_voucher_delete_voucher_success(driver):
+    admin = AdminVoucherPage(driver)
+    login_as(driver)
+
+    admin.open_page()
+    admin.go_to_create_page()
+
+    random_suffix = str(uuid.uuid4())[:6]
+    code = f"TEST_VOUCHER_{random_suffix}"
+    discount_type = 'PERCENT'
+    discount_value = '35'
+    end_date = (datetime.today() + timedelta(days=1)).strftime('%m%d%Y%I%M%p')
+
+    admin.create_new_voucher(
+        code, discount_type, discount_value, end_date
+    )
+    time.sleep(2)
+
+    admin.go_to_last_page()
+    admin.delete_voucher()
+    driver.switch_to.alert.accept()
+    time.sleep(1)
+
+    alert = admin.alert().text
+    assert 'success' in alert
+
+def test_admin_voucher_delete_voucher_failed_using_voucher(driver):
     admin_v = AdminVoucherPage(driver)
     login_as(driver)
 
@@ -262,46 +293,9 @@ def test_admin_voucher_delete_voucher_success(driver):
     admin_uv = AdminUserVoucherPage(driver)
     admin_uv.open_page()
     admin_uv.go_to_create_page()
-    admin_uv.create_new_user_voucher('2', code)
+    admin_uv.create_new_user_voucher('2',code)
     admin_uv.save_user_voucher()
     time.sleep(2)
-
-    admin_i = AdminIndexPage(driver)
-    admin_i.open_page()
-    admin_i.logout()
-
-    home = HomePage(driver)
-    cart = CartPage(driver)
-
-    login = LoginPage(driver)
-    login.open_page()
-    login.login('user_0', '123')
-    time.sleep(1)
-
-    home.add_to_cart()
-    time.sleep(1)
-
-    cart.open_page()
-    vouchers = Select(cart.get_voucher_select())
-    last_index = len(vouchers.options) - 1
-    vouchers.select_by_index(last_index)
-    time.sleep(1)
-    cart.pay()
-    time.sleep(1)
-
-    home.logout()
-
-    admin_o = AdminOrderPage(driver)
-    login_as(driver)
-    admin_o.open_page()
-    page = admin_o.get_page()
-    if page:
-        admin_o.go_to_last_page()
-    admin_o.go_to_edit_page()
-    time.sleep(2)
-    admin_o.edit_status_order('CONFIRMED')
-    admin_o.save_order()
-    time.sleep(1)
 
     admin_v.open_page()
     page = admin_v.get_page()
@@ -312,84 +306,5 @@ def test_admin_voucher_delete_voucher_success(driver):
     driver.switch_to.alert.accept()
     time.sleep(1)
 
-    admin_uv.open_page()
-    admin_uv.go_to_last_page()
-    admin_uv.delete_user_voucher()
-    driver.switch_to.alert.accept()
-    time.sleep(1)
-
-    admin_v.open_page()
-    admin_v.go_to_last_page()
-    admin_v.delete_voucher()
-    driver.switch_to.alert.accept()
-    time.sleep(1)
-
     alert = admin_v.alert().text
-
-
-    assert 'success' in alert
-
-def test_admin_voucher_delete_voucher_failed_using_voucher(driver):
-    admin = AdminVoucherPage(driver)
-    login_as(driver)
-
-    admin.open_page()
-    admin.go_to_create_page()
-
-    random_suffix = str(uuid.uuid4())[:6]
-    code = f"TEST_VOUCHER_{random_suffix}"
-    discount_type = 'PERCENT'
-    discount_value = '35'
-    enddate = (datetime.today() + timedelta(days=1)).strftime('%m%d%Y%I%M%p')
-
-    admin.create_new_voucher(
-        code, discount_type, discount_value, enddate
-    )
-    time.sleep(2)
-
-    admin = AdminUserVoucherPage(driver)
-    admin.open_page()
-    admin.go_to_create_page()
-    admin.create_new_user_voucher('2',code)
-    admin.save_user_voucher()
-    time.sleep(2)
-
-    admin = AdminIndexPage(driver)
-    admin.open_page()
-    admin.logout()
-
-    home = HomePage(driver)
-    cart = CartPage(driver)
-
-    login = LoginPage(driver)
-    login.open_page()
-    login.login('user_0', '123')
-    time.sleep(1)
-
-    home.add_to_cart()
-    time.sleep(1)
-
-    cart.open_page()
-    vouchers = Select(cart.get_voucher_select())
-    last_index = len(vouchers.options) - 1
-    vouchers.select_by_index(last_index)
-    time.sleep(1)
-    cart.pay()
-    time.sleep(1)
-
-    home.logout()
-
-    admin = AdminVoucherPage(driver)
-    login_as(driver)
-
-    admin.open_page()
-    page = admin.get_page()
-    if page:
-        admin.go_to_last_page()
-    time.sleep(1)
-    admin.delete_voucher()
-    driver.switch_to.alert.accept()
-    time.sleep(1)
-
-    alert = admin.alert().text
     assert 'thất bại' in alert

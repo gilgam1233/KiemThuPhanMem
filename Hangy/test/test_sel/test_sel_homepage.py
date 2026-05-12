@@ -21,15 +21,15 @@ def test_homepage_search_success(driver):
 
     results = driver.find_elements(By.CSS_SELECTOR, '.product')
 
+    kw_lower = kw.lower()
     for r in results:
-        # Lấy text của sản phẩm và chuyển hết thành chữ thường
         product_text = r.text.lower()
-        kw_lower = kw.lower()
 
-        # Kiểm tra và in ra thông báo lỗi chi tiết nếu sai
         assert kw_lower in product_text
 
-def test_homepage_search_failed(driver):
+    assert len(results) != 0
+
+def test_homepage_search_no_results_found(driver):
     home = HomePage(driver)
 
     kw='aaa'
