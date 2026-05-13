@@ -5,21 +5,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5aefd2b1-ebad-465d-a95b-5fa39e2fac78" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Hangy/test/db_helper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/test/pages/BasePage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/test/pages/CartPage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/test/pages/HomePage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/test/pages/LoginPage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/test/pages/OrderHistoryPage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/test/pages/RegisterPage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/test/pages/admin/AdminCategoryPage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/test/pages/admin/AdminIndexPage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/test/pages/admin/AdminOrderPage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/test/pages/admin/AdminProductPage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/test/pages/admin/AdminUserPage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/test/pages/admin/AdminUserVoucherPage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/test/pages/admin/AdminVoucherPage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/test/test_apply_voucher.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/test/test_base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/test/test_create_voucher.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hangy/test/test_remove_voucher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/KiemThuPhanMem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/KiemThuPhanMem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/test/pages/admin/AdminVoucherPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/test/pages/admin/AdminVoucherPage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_admin_category_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/test/test_sel/test_admin_category.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_admin_index_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/test/test_sel/test_admin_index.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_admin_order_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/test/test_sel/test_admin_order.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_admin_product_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/test/test_sel/test_admin_product.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_admin_user_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/test/test_sel/test_admin_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_admin_voucher_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/test/test_sel/test_admin_voucher.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_sel_base_page.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_sel_cart_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/test/test_sel/test_sel_cart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_sel_home_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/test/test_sel/test_sel_homepage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_sel_login_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/test/test_sel/test_sel_login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_sel_order_history_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/test/test_sel/test_sel_order_history.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_sel_register_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/test/test_sel/test_sel_register.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/routes/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/routes/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/routes/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/routes/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/services/order_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/services/order_services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/services/product_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/services/product_services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/services/user_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/services/user_services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/services/validators.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/services/voucher_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/services/voucher_services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/static/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/static/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/static/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/static/css/cart.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/static/css/cart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/static/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/static/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/static/css/order_history.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/static/css/order_history.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/static/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/static/css/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/static/js/co_note.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/static/js/main_page.js" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/static/js/main_page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/templates/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/templates/admin/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/templates/admin/master.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/templates/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/templates/order_history.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/templates/order_history.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/templates/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_flask.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run_flask.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,45 +70,114 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
+  &quot;associatedIndex&quot;: 8
 }</component>
-  <component name="ProjectId" id="3C2aSRl1PmHJHrlZgKvB1g6YQn9" />
+  <component name="ProjectId" id="3C9eIujbMUvuzFtTXdRMYYzVY81" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python tests.pytest in test_admin_category_page.py.executor": "Run",
-    "Python tests.pytest in test_admin_index_page.py.executor": "Run",
-    "Python tests.pytest in test_admin_order_page.py.executor": "Run",
-    "Python tests.pytest in test_sel.executor": "Run",
-    "Python.index.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "test",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/TRAN PHUONG VY/1041570724/NAM_3_HK_2/KIEM THU PHAN MEM/KiemThuPhanMem",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Flask server.Flask (Hangy/test/test_base.py).executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for Hangy.test.test_apply_voucher.test_apply_already_used_voucher.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for Hangy.test.test_apply_voucher.test_apply_expired_voucher.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for Hangy.test.test_apply_voucher.test_user_apply_voucher_success.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for Hangy.test.test_create_voucher.test_admin_create_invalid_voucher.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for Hangy.test.test_create_voucher.test_admin_create_valid_voucher.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for Hangy.test.test_remove_voucher.test_admin_delete_completed_order_fails.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for Hangy.test.test_remove_voucher.test_admin_delete_order_resets_voucher.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.sel.test_order_history.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_integration_apply_voucher.test_apply_already_used_voucher.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_integration_apply_voucher.test_apply_expired_voucher.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_integration_apply_voucher.test_apply_invalid_voucher_scenarios.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_integration_apply_voucher.test_apply_modified_voucher.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_integration_apply_voucher.test_apply_modified_voucher_is_active.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_integration_apply_voucher.test_apply_modified_voucher_remove.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_integration_apply_voucher.test_apply_modified_voucher_scenarios.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_integration_apply_voucher.test_apply_voucher.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_integration_apply_voucher.test_remove_order.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_integration_apply_voucher.test_user_apply_voucher_success.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_integration_create_voucher.test_integration_admin_save_voucher.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_integration_create_voucher.test_integration_create_invalid_voucher.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_integration_create_voucher.test_integration_flask_admin_create_voucher.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_integration_remove_voucher.test_admin_delete_completed_order_fails.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_unit_apply_voucher.test_apply_invalid_voucher_scenarios.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_unit_apply_voucher.test_apply_modified_voucher_scenarios.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_unit_apply_voucher.test_apply_voucher.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_unit_apply_voucher.test_unit_apply_voucher_math.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_unit_create_voucher.test_admin_create_invalid_voucher.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_unit_create_voucher.test_admin_create_valid_voucher.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_unit_create_voucher.test_check_duplicate_voucher_creating.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_unit_create_voucher.test_create_invalid_voucher.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_unit_create_voucher.test_create_missing_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_unit_create_voucher.test_create_missing_discount_type.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_unit_create_voucher.test_create_valid_voucher.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_unit_create_voucher.test_create_valid_voucher2.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_unit_create_voucher.test_create_voucher_missing_required_fields.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_unit_create_voucher.test_create_without_fields.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_unit_create_voucher.test_unit_admin_create_voucher_invalid_logic.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_unit_create_voucher.test_voucher_integrity_constraints.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_unit_order_logic.test_unit_apply_voucher_math.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_unit_remove_voucher.test_unit_admin_delete_order_logic.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for Hangy.test.test_unit_remove_voucher.test_unit_admin_delete_order_resets_voucher.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in sel.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in test_admin_category_page.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in test_sel_admin.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in test_unit_create_voucher.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.KiemThuPhanMem.executor&quot;: &quot;Run&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.index.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model (1).executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHELLCHECK.PATH&quot;: &quot;I do mind&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;update__backend__and__frontend&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/đại học/KiemThuPhanMem/Hangy/test/pages&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Python tests.pytest in test_sel">
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\đại học\KiemThuPhanMem\Hangy\test\pages" />
+      <recent name="D:\đại học\KiemThuPhanMem\Hangy\test" />
+      <recent name="D:\đại học\KiemThuPhanMem\Hangy\services" />
+      <recent name="D:\đại học\KiemThuPhanMem\Hangy\routes" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.index">
+    <configuration name="KiemThuPhanMem" type="PythonConfigurationType" factoryName="Python">
+      <module name="KiemThuPhanMem" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hangy/__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="index" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="KiemThuPhanMem" />
       <option name="ENV_FILES" value="" />
@@ -105,7 +209,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -113,7 +217,7 @@
       <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in test_admin_category.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for Hangy.test.test_apply_voucher.test_apply_invalid_voucher_scenarios" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="KiemThuPhanMem" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -127,11 +231,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/Hangy/test/test_sel/test_admin_category.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;Hangy.test.test_apply_voucher.test_apply_invalid_voucher_scenarios&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in test_admin_index.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for Hangy.test.test_apply_voucher.test_apply_modified_voucher_scenarios" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="KiemThuPhanMem" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -145,11 +249,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/Hangy/test/test_sel/test_admin_index.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;Hangy.test.test_apply_voucher.test_apply_modified_voucher_scenarios&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in test_admin_order.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in test_admin_category_page.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="KiemThuPhanMem" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -163,17 +267,17 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/Hangy/test/test_sel/test_admin_order.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Hangy/test/test_sel/test_admin_category_page.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in test_sel" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in test_sel_admin.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="KiemThuPhanMem" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hangy/test/test_sel" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -181,17 +285,17 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/Hangy/test/test_sel&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Hangy/test/test_sel_admin.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest in test_sel" />
-        <item itemvalue="Python tests.pytest in test_admin_order.py" />
-        <item itemvalue="Python tests.pytest in test_admin_index.py" />
-        <item itemvalue="Python tests.pytest in test_admin_category.py" />
         <item itemvalue="Python.index" />
+        <item itemvalue="Python tests.pytest in test_admin_category_page.py" />
+        <item itemvalue="Python tests.pytest in test_sel_admin.py" />
+        <item itemvalue="Python tests.pytest for Hangy.test.test_apply_voucher.test_apply_modified_voucher_scenarios" />
+        <item itemvalue="Python tests.pytest for Hangy.test.test_apply_voucher.test_apply_invalid_voucher_scenarios" />
       </list>
     </recent_temporary>
   </component>
@@ -206,22 +310,103 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="5aefd2b1-ebad-465d-a95b-5fa39e2fac78" name="Changes" comment="" />
-      <created>1775586117314</created>
+      <created>1775802136659</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1775586117314</updated>
-      <workItem from="1775586118352" duration="231000" />
+      <updated>1775802136659</updated>
+      <workItem from="1775802138022" duration="120000" />
+      <workItem from="1775802260509" duration="4059000" />
+      <workItem from="1775832270255" duration="2809000" />
+      <workItem from="1775835204560" duration="8849000" />
+      <workItem from="1775918876860" duration="6703000" />
+      <workItem from="1775972976592" duration="3440000" />
+      <workItem from="1776153644078" duration="7431000" />
+      <workItem from="1776434267348" duration="596000" />
+      <workItem from="1776449649153" duration="2675000" />
+      <workItem from="1776498332090" duration="18835000" />
+      <workItem from="1776585136349" duration="3409000" />
+      <workItem from="1776785846973" duration="2860000" />
+      <workItem from="1776956855212" duration="3509000" />
+      <workItem from="1777048804380" duration="53000" />
+      <workItem from="1777191074895" duration="1332000" />
+      <workItem from="1777301325238" duration="26000" />
+      <workItem from="1777361021512" duration="3734000" />
+      <workItem from="1777472098879" duration="2082000" />
+      <workItem from="1777571992528" duration="106000" />
+      <workItem from="1777789132526" duration="2156000" />
+      <workItem from="1777815817965" duration="845000" />
+      <workItem from="1778053957020" duration="1574000" />
+      <workItem from="1778248956048" duration="14770000" />
+      <workItem from="1778305189008" duration="6425000" />
+      <workItem from="1778327771227" duration="52000" />
+      <workItem from="1778336142631" duration="85000" />
+      <workItem from="1778425504168" duration="1182000" />
+      <workItem from="1778506340723" duration="9877000" />
+      <workItem from="1778566350433" duration="4185000" />
+      <workItem from="1778597576138" duration="1845000" />
+      <workItem from="1778685125352" duration="88000" />
+      <workItem from="1778685286888" duration="2129000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_in_test_admin_index_page_py.coverage" NAME="pytest in test_admin_index_page.py Coverage Results" MODIFIED="1778570278042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_in_test_sel.coverage" NAME="pytest in test_sel Coverage Results" MODIFIED="1778592536236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hangy/test/test_sel" />
-    <SUITE FILE_PATH="coverage/KiemThuPhanMem$index.coverage" NAME="index Coverage Results" MODIFIED="1778569424766" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hangy" />
-    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_in_test_admin_category_page_py.coverage" NAME="pytest in test_admin_category_page.py Coverage Results" MODIFIED="1778569834301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_in_test_admin_order_page_py.coverage" NAME="pytest in test_admin_order_page.py Coverage Results" MODIFIED="1778570298819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_integration_apply_voucher_test_remove_order.coverage" NAME="pytest for Hangy.test.test_integration_apply_voucher.test_remove_order Coverage Results" MODIFIED="1778510234199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_unit_apply_voucher_test_unit_apply_voucher_math.coverage" NAME="pytest for Hangy.test.test_unit_apply_voucher.test_unit_apply_voucher_math Coverage Results" MODIFIED="1778512882084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_integration_apply_voucher_test_user_apply_voucher_success.coverage" NAME="pytest for Hangy.test.test_integration_apply_voucher.test_user_apply_voucher_success Coverage Results" MODIFIED="1777191112718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$index.coverage" NAME="index Coverage Results" MODIFIED="1778686248819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hangy" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_unit_create_voucher_test_create_missing_data.coverage" NAME="pytest for Hangy.test.test_unit_create_voucher.test_create_missing_data Coverage Results" MODIFIED="1778266486443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_integration_apply_voucher_test_apply_voucher.coverage" NAME="pytest for Hangy.test.test_integration_apply_voucher.test_apply_voucher Coverage Results" MODIFIED="1778511565845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_integration_create_voucher_test_integration_create_invalid_voucher.coverage" NAME="pytest for Hangy.test.test_integration_create_voucher.test_integration_create_invalid_voucher Coverage Results" MODIFIED="1778306730276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$KiemThuPhanMem.coverage" NAME="KiemThuPhanMem Coverage Results" MODIFIED="1775802338653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_integration_apply_voucher_test_apply_modified_voucher.coverage" NAME="pytest for Hangy.test.test_integration_apply_voucher.test_apply_modified_voucher Coverage Results" MODIFIED="1778510996636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_unit_apply_voucher_test_apply_modified_voucher_scenarios.coverage" NAME="pytest for Hangy.test.test_unit_apply_voucher.test_apply_modified_voucher_scenarios Coverage Results" MODIFIED="1778512898757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1776507390614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hangy/models" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_unit_remove_voucher_test_unit_admin_delete_order_resets_voucher.coverage" NAME="pytest for Hangy.test.test_unit_remove_voucher.test_unit_admin_delete_order_resets_voucher Coverage Results" MODIFIED="1778256854240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_unit_create_voucher_test_create_voucher_missing_required_fields.coverage" NAME="pytest for Hangy.test.test_unit_create_voucher.test_create_voucher_missing_required_fields Coverage Results" MODIFIED="1778266812373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$Flask__Hangy_test_test_base_py_.coverage" NAME="Flask (Hangy/test/test_base.py) Coverage Results" MODIFIED="1776522821071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_in_test_unit_create_voucher_py.coverage" NAME="pytest in test_unit_create_voucher.py Coverage Results" MODIFIED="1778309812638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_sel_test_order_history.coverage" NAME="pytest for Hangy.test.sel.test_order_history Coverage Results" MODIFIED="1778308914360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_integration_remove_voucher_test_admin_delete_completed_order_fails.coverage" NAME="pytest for Hangy.test.test_integration_remove_voucher.test_admin_delete_completed_order_fails Coverage Results" MODIFIED="1777191132103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_unit_create_voucher_test_admin_create_invalid_voucher.coverage" NAME="pytest for Hangy.test.test_unit_create_voucher.test_admin_create_invalid_voucher Coverage Results" MODIFIED="1778262877185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_in_sel_py.coverage" NAME="pytest in sel.py Coverage Results" MODIFIED="1778308957277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_unit_apply_voucher_test_apply_invalid_voucher_scenarios.coverage" NAME="pytest for Hangy.test.test_unit_apply_voucher.test_apply_invalid_voucher_scenarios Coverage Results" MODIFIED="1778512892840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_unit_create_voucher_test_voucher_integrity_constraints.coverage" NAME="pytest for Hangy.test.test_unit_create_voucher.test_voucher_integrity_constraints Coverage Results" MODIFIED="1778307486562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_unit_order_logic_test_unit_apply_voucher_math.coverage" NAME="pytest for Hangy.test.test_unit_order_logic.test_unit_apply_voucher_math Coverage Results" MODIFIED="1778509328375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_unit_create_voucher_test_create_valid_voucher2.coverage" NAME="pytest for Hangy.test.test_unit_create_voucher.test_create_valid_voucher2 Coverage Results" MODIFIED="1778267795251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$.coverage" NAME=" Coverage Results" MODIFIED="1776524051878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_integration_apply_voucher_test_apply_modified_voucher_is_active.coverage" NAME="pytest for Hangy.test.test_integration_apply_voucher.test_apply_modified_voucher_is_active Coverage Results" MODIFIED="1778511819523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_unit_create_voucher_test_admin_create_valid_voucher.coverage" NAME="pytest for Hangy.test.test_unit_create_voucher.test_admin_create_valid_voucher Coverage Results" MODIFIED="1778262665213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_unit_create_voucher_test_create_without_fields.coverage" NAME="pytest for Hangy.test.test_unit_create_voucher.test_create_without_fields Coverage Results" MODIFIED="1778266381800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_integration_apply_voucher_test_apply_expired_voucher.coverage" NAME="pytest for Hangy.test.test_integration_apply_voucher.test_apply_expired_voucher Coverage Results" MODIFIED="1778511585527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_unit_remove_voucher_test_unit_admin_delete_order_logic.coverage" NAME="pytest for Hangy.test.test_unit_remove_voucher.test_unit_admin_delete_order_logic Coverage Results" MODIFIED="1778512715239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_unit_create_voucher_test_create_invalid_voucher.coverage" NAME="pytest for Hangy.test.test_unit_create_voucher.test_create_invalid_voucher Coverage Results" MODIFIED="1778307478200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_integration_create_voucher_test_integration_flask_admin_create_voucher.coverage" NAME="pytest for Hangy.test.test_integration_create_voucher.test_integration_flask_admin_create_voucher Coverage Results" MODIFIED="1778265293579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_unit_create_voucher_test_check_duplicate_voucher_creating.coverage" NAME="pytest for Hangy.test.test_unit_create_voucher.test_check_duplicate_voucher_creating Coverage Results" MODIFIED="1778268625412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_integration_apply_voucher_test_apply_modified_voucher_remove.coverage" NAME="pytest for Hangy.test.test_integration_apply_voucher.test_apply_modified_voucher_remove Coverage Results" MODIFIED="1778512273323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_in_test_sel_admin_py.coverage" NAME="pytest in test_sel_admin.py Coverage Results" MODIFIED="1778515174203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_unit_create_voucher_test_create_missing_discount_type.coverage" NAME="pytest for Hangy.test.test_unit_create_voucher.test_create_missing_discount_type Coverage Results" MODIFIED="1778266544671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_integration_apply_voucher_test_apply_already_used_voucher.coverage" NAME="pytest for Hangy.test.test_integration_apply_voucher.test_apply_already_used_voucher Coverage Results" MODIFIED="1778509305963" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_integration_apply_voucher_test_apply_modified_voucher_scenarios.coverage" NAME="pytest for Hangy.test.test_integration_apply_voucher.test_apply_modified_voucher_scenarios Coverage Results" MODIFIED="1778512401965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_integration_apply_voucher_test_apply_invalid_voucher_scenarios.coverage" NAME="pytest for Hangy.test.test_integration_apply_voucher.test_apply_invalid_voucher_scenarios Coverage Results" MODIFIED="1778512462805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$model__1_.coverage" NAME="model (1) Coverage Results" MODIFIED="1775841501974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hangy/models" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_unit_apply_voucher_test_apply_voucher.coverage" NAME="pytest for Hangy.test.test_unit_apply_voucher.test_apply_voucher Coverage Results" MODIFIED="1778512886444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_in_test_admin_category_page_py.coverage" NAME="pytest in test_admin_category_page.py Coverage Results" MODIFIED="1778568356992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_integration_create_voucher_test_integration_admin_save_voucher.coverage" NAME="pytest for Hangy.test.test_integration_create_voucher.test_integration_admin_save_voucher Coverage Results" MODIFIED="1777191125265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_unit_create_voucher_test_create_valid_voucher.coverage" NAME="pytest for Hangy.test.test_unit_create_voucher.test_create_valid_voucher Coverage Results" MODIFIED="1778307494016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_for_Hangy_test_test_unit_create_voucher_test_unit_admin_create_voucher_invalid_logic.coverage" NAME="pytest for Hangy.test.test_unit_create_voucher.test_unit_admin_create_voucher_invalid_logic Coverage Results" MODIFIED="1778307394957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
