@@ -143,6 +143,42 @@ h5.border-bottom {
     font-weight: bold;
 }
 
+/* FORM */
+.submit-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0;
+}
+
+.daterangepicker.dropdown-menu {
+    width: max-content !important;
+    min-width: 320px !important;
+    padding: 10px 15px !important;
+}
+
+/* 2. Dàn hàng ngang phần chọn giờ cho ngay ngắn */
+.daterangepicker .calendar-time {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important; /* Tạo khoảng cách đều giữa các ô */
+    margin-top: 15px !important;
+}
+
+/* 3. Ép danh sách giờ/phút cuộn lại thành hình dáng Dropdown gọn gàng */
+.daterangepicker .calendar-time select {
+    appearance: menulist !important; /* Lệnh quan trọng: Ép hiển thị kiểu Dropdown gốc */
+    -moz-appearance: menulist !important;
+    -webkit-appearance: menulist !important;
+    height: 32px !important;
+    width: 65px !important;
+    padding: 0 4px !important;
+    border: 1px solid #ced4da !important;
+    border-radius: 5px !important;
+    cursor: pointer;
+}
+
 /* RESPONSIVE */
 @media (max-width: 992px) {
     body {
@@ -195,6 +231,9 @@ h5.border-bottom {
 @media (max-width: 725px) {
     .extension > div {
         width: 50%;
+    }
+    .submit-row .btn{
+        width: 100%;
     }
 }
 

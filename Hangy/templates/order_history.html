@@ -11,16 +11,16 @@
     <table class="table">
         <tr>
             <th id="created-date">Ngày tạo</th>
-            <th id="voucher-code">Mã giảm giá</th>
-            <th id="final-amount">Tổng tiền</th>
+            <th id="total-amount">Tổng tiền hàng</th>
+            <th id="final-amount">Tổng thanh toán</th>
             <th id="status">Trạng thái</th>
         </tr>
         {% for o in list_orders %}
         <tr>
-            <td>{{o.created_at}}</td>
-            <td>{{o.code}}</td>
+            <td>{{o.created_date}}</td>
+            <td>{{"{:,.0f}".format(o.total_amount)}} ₫</td>
             <td>{{"{:,.0f}".format(o.final_amount)}} ₫</td>
-            <td>{{o.status}}</td>
+            <td>{{o.status.name}}</td>
         </tr>
         {% endfor %}
     </table>
