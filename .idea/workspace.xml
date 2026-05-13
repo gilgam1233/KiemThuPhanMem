@@ -5,6 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5aefd2b1-ebad-465d-a95b-5fa39e2fac78" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/routes/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/routes/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/services/user_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/services/user_services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/templates/admin/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/templates/admin/master.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hangy/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_admin_category_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_admin_index_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_admin_order_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_admin_product_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_admin_user_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_admin_voucher_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_sel_base_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_sel_cart_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_sel_home_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_sel_login_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_sel_order_history_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangy/test/test_sel/test_sel_register_page.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +35,17 @@
         <option value="HTML File" />
         <option value="Python Script" />
       </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
     </option>
   </component>
   <component name="Git.Settings">
@@ -38,11 +67,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "Python tests.pytest in test_sel.executor": "Run",
+    "Python.index.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "setup/login",
+    "git-widget-placeholder": "test",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "C:/TRAN PHUONG VY/1041570724/NAM_3_HK_2/KIEM THU PHAN MEM/KiemThuPhanMem",
     "node.js.detected.package.eslint": "true",
@@ -52,23 +83,54 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="KiemThuPhanMem" type="Python.FlaskServer">
+  <component name="RunManager" selected="Python tests.pytest in test_sel">
+    <configuration name="index" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="KiemThuPhanMem" />
-      <option name="target" value="$PROJECT_DIR$/Hangy/__init__.py" />
-      <option name="targetType" value="PATH" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hangy" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hangy/index.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_sel" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="KiemThuPhanMem" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Hangy/test/test_sel" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="launchJavascriptDebuger" value="false" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Hangy/test/test_sel&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.pytest in test_sel" />
+        <item itemvalue="Python.index" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -86,10 +148,18 @@
       <option name="presentableId" value="Default" />
       <updated>1775586117314</updated>
       <workItem from="1775586118352" duration="231000" />
+      <workItem from="1778695022802" duration="33000" />
+      <workItem from="1778695075468" duration="2817000" />
+      <workItem from="1778698385711" duration="611000" />
+      <workItem from="1778699039006" duration="737000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$pytest_in_test_sel.coverage" NAME="pytest in test_sel Coverage Results" MODIFIED="1778696528337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hangy/test/test_sel" />
+    <SUITE FILE_PATH="coverage/KiemThuPhanMem$index.coverage" NAME="index Coverage Results" MODIFIED="1778699391192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Hangy" />
   </component>
 </project>
