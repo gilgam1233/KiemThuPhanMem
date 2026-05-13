@@ -41,6 +41,6 @@ def test_session(test_app):
 @pytest.fixture
 def driver():
     driver = webdriver.Chrome()
-    driver.maximize_window()
+    driver.set_window_size(1366, 768)
     yield driver
     driver.quit()

@@ -46,7 +46,6 @@ def test_homepage_go_to_next_page(driver):
     home = HomePage(driver)
 
     home.open_page()
-    driver.execute_script('window.scrollTo(0, 2000)')
     time.sleep(1)
     home.go_to_next_page()
     time.sleep(1)

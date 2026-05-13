@@ -27,6 +27,8 @@ class HomePage(BasePage):
 
     def open_page(self):
         self.open(self.URL)
+        time.sleep(1)
+        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
     def go_to_cart(self):
         self.click(*self.CART_BUTTON)

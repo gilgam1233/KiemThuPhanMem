@@ -1,6 +1,7 @@
 import time
 import uuid
 from datetime import datetime, timedelta
+from Hangy.routes.main import voucher_services
 
 from selenium.common import NoSuchElementException
 from selenium.webdriver.support.select import Select
@@ -218,7 +219,7 @@ def test_cart_load_vouchers(driver):
     ]
 
     with app.app_context():
-        db_vouchers = get_voucher_by_id(2)
+        db_vouchers = get_voucher_by_id(user_id=2)
 
     assert set(ui_vouchers) == set(db_vouchers)
 

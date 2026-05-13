@@ -34,6 +34,12 @@ class UserService:
         **kwargs,
     ) -> Dict[bool,str]:
         try:
+
+            fields = [username, last_name, first_name]
+
+            if any(f != f.strip() for f in fields):
+                return [False, "UKhông được chứa khoảng trắng ở đầu hoặc cuối!"]
+
             if User.query.filter_by(username=username).first():
                 return [False,"Username đã tồn tại!"]
 
@@ -45,6 +51,9 @@ class UserService:
 
             if len(username) > 30 or len(password) > 255 or len(first_name) > 30 or len(last_name) > 30 or len(email) > 50 or len(kwargs.get("phone")) > 15 or len(kwargs.get('address')) > 255:
                 return [False,'Nhập quá ký tự cho phép!']
+
+            if username.__contains__("\s") or last_name.__contains__("\s") or first_name.__contains__("\s"):
+                return [False,'Tồn tại khoảng trắng']
 
             full_name = f"{last_name} {first_name}".strip()
             username = username.strip()
